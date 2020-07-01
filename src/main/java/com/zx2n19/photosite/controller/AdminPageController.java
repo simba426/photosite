@@ -6,16 +6,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AdminPageController {
+
     @GetMapping(value="/admin")
     public String admin(){
-        return "redirect:admin_index";
+        return "redirect:user_list";
     }
-    @GetMapping(value="/admin_index")
+
+    @GetMapping(value="/user_list")
     public String index() {
-        return "admin/index";
+        return "admin/listUser";
     }
+
     @GetMapping(value="/login")
     public String login() {
         return "admin/login";
     }
+
 }
