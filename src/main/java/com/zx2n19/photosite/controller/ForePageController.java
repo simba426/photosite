@@ -21,8 +21,18 @@ public class ForePageController {
         return "fore/register";
     }
 
+    @GetMapping(value="/login")
+    public String login(){
+        return "fore/login";
+    }
+
     @GetMapping(value="/registerSuccess")
     public String registerSuccess(){
         return "fore/registerSuccess";
+    }
+
+    @GetMapping("/forelogout")
+    public String logout( ) {
+        return "redirect:home";
     }
 }
