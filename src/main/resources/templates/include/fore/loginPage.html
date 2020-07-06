@@ -31,7 +31,8 @@
                             axios.post(url,this.user).then(function(response) {
                                 var result = response.data;
                                 if(result.code==0){
-                                    location.href="home";
+                                    //location.href="home"; 暂时修改定位到后台
+                                    location.href="admin";
                                 }
                                 else{
                                     $("span.errorMessage").html(result.message);

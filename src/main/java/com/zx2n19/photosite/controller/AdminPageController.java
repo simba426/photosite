@@ -17,4 +17,10 @@ public class AdminPageController {
         return "admin/listUser";
     }
 
+    @GetMapping(value="/photo_list")
+    public String photos() {
+        return "admin/listPhoto";
+    }
+
+
 }

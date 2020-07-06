@@ -61,4 +61,8 @@ public class UserService {
         return userDAO.getByUsernameAndPassword(username,password);
     }
 
+    public User getById(int id) {
+        return userDAO.findOne(id);
+    }
+
 }
