@@ -2168,20 +2168,6 @@ table.registerTable input {
 	font-size: 14px;
 }
 
-table.registerTable select {
-	border: 1px solid #DEDEDE;
-	width: 213px;
-	height: 36px;
-	font-size: 14px;
-}
-
-table.registerTable option {
-	border: 1px solid #DEDEDE;
-	width: 213px;
-	height: 36px;
-	font-size: 14px;
-}
-
 td.registerButtonTD {
 	text-align: center;
 }

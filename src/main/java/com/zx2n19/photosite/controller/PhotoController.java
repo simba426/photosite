@@ -4,12 +4,18 @@ import com.zx2n19.photosite.pojo.Photo;
 import com.zx2n19.photosite.pojo.User;
 import com.zx2n19.photosite.service.PhotoService;
 import com.zx2n19.photosite.service.UserService;
+import com.zx2n19.photosite.util.ImageUtil;
 import com.zx2n19.photosite.util.Page4Navigator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 
 @RestController
@@ -33,10 +39,23 @@ public class PhotoController {
     }
 
     @PostMapping("/photos")
-    public Object add(@RequestBody Photo bean) throws Exception {
+    public void add(Photo bean, MultipartFile image, HttpServletRequest request, HttpSession session) throws Exception {
+        User user = (User)session.getAttribute("user");
+        bean.setUser(user);
         bean.setCreateDate(new Date());
         photoService.add(bean);
-        return bean;
+        saveOrUpdateImageFile(bean, image, request);
+    }
+
+    public void saveOrUpdateImageFile(Photo bean, MultipartFile image, HttpServletRequest request)
+            throws IOException {
+        File imageFolder= new File(request.getServletContext().getRealPath("img/photo"));
+        File file = new File(imageFolder,bean.getId()+".jpg");
+        if(!file.getParentFile().exists())
+            file.getParentFile().mkdirs();
+        image.transferTo(file);
+        BufferedImage img = ImageUtil.change2jpg(file);
+        ImageIO.write(img, "jpg", file);
     }
 
     @DeleteMapping("/photos/{id}")
