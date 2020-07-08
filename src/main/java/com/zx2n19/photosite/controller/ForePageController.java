@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 public class ForePageController {
     @GetMapping(value="/")
     public String index() {
-        return "redirect:home";
+        return "redirect:login";
     }
 
     @GetMapping(value="/home")

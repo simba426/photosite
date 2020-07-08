@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="include/admin/adminHeader::html('照片编辑')" ></head>
+<body>
+<div th:replace="include/admin/adminNavigator::html" ></div>
+<script>
+    $(function(){
+        var data4Vue = {
+            uri:'photos',
+            listURL:'photo_list',
+            bean: {id:0, name:'',description:'', category:'', shutterSpeed:'',aperture:'',iso:'', camera:'', createDate:''},
+            file: null
+        };
+
+        //ViewModel
+        var vue = new Vue({
+            el: '#workingArea',
+            data: data4Vue,
+            mounted:function(){ //mounted　表示这个 Vue 对象加载成功了
+                this.get();
+            },
+            methods: {
+                get:function(){
+                    var id = getUrlParms("id");
+                    var url = this.uri+"/"+id;
+                    axios.get(url).then(function(response) {
+                        vue.bean = response.data;
+                    })
+                },
+                update: function () {
+                    if(!checkEmpty(this.bean.name, "照片名称"))
+                        return;
+                    if(!checkEmpty(this.bean.description, "图片描述"))
+                        return;
+                    if(!checkEmpty(this.bean.shutterSpeed, "快门速度"))
+                        return;
+                    if(!checkEmpty(this.bean.aperture, "光圈"))
+                        return;
+                    if(!checkEmpty(this.bean.iso, "ISO"))
+                        return;
+                    if(!checkEmpty(this.bean.camera, "相机"))
+                        return;
+                    if(!checkEmpty(this.bean.category, "分类"))
+                        return;
+                    var url = this.uri + "/" + this.bean.id;
+
+                    //axios.js 上传文件要用 formData 这种方式
+                    var formData = new FormData();
+                    formData.append("image", this.file);
+                    formData.append("name", this.bean.name);
+                    formData.append("description", this.bean.description);
+                    formData.append("shutterSpeed", this.bean.shutterSpeed);
+                    formData.append("aperture", this.bean.aperture);
+                    formData.append("iso", this.bean.iso);
+                    formData.append("camera", this.bean.camera);
+                    formData.append("category", this.bean.category);
+                    formData.append('createDate', this.bean.createDate);
+
+                    axios.put(url, formData).then(function(response){
+                        location.href=vue.listURL;
+                    });
+                },
+                getFile: function (event) {
+                    this.file = event.target.files[0];
+                }
+            }
+        });
+        Vue.filter('formatDateFilter', function (value, formatString) {
+            if(null==value)
+                return "";
+            formatString = formatString || 'YYYY-MM-DD HH:mm:ss';
+            return moment(value).format(formatString);
+        });
+    });
+
+</script>
+
+<div id="workingArea" >
+    <ol class="breadcrumb">
+        <li><a href="photo_list">所有照片</a></li>
+        <li class="active">编辑照片</li>
+    </ol>
+
+    <div class="panel panel-warning editDiv">
+        <div class="panel-heading">编辑照片</div>
+        <div class="panel-body">
+            <table class="editTable">
+                <tr>
+                    <td>照片</td>
+                    <td>
+                        <input id="photoPic" accept="image/*" type="file" name="image" @change="getFile($event)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>照片名称</td>
+                    <td><input  @keyup.enter="update" v-model.trim="bean.name" type="text"
+                                class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>照片分类</td>
+                    <td><input  @keyup.enter="update" v-model.trim="bean.category" type="text"
+                                class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>照片描述</td>
+                    <td><input  @keyup.enter="update" v-model.trim="bean.description" type="text"
+                                class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>快门</td>
+                    <td><input  @keyup.enter="update" v-model.trim="bean.shutterSpeed"  type="text"
+                                class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>光圈</td>
+                    <td><input  @keyup.enter="update" v-model.trim="bean.aperture" type="text"
+                                class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>ISO</td>
+                    <td><input  @keyup.enter="update" v-model.trim="bean.iso"  type="text"
+                                class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>相机</td>
+                    <td><input  @keyup.enter="update" v-model.trim="bean.camera"  type="text"
+                                class="form-control"></td>
+                </tr>
+
+                <tr class="submitTR">
+                    <td colspan="2" align="center">
+                        <input type="hidden" name="id" v-model.trim="bean.id">
+                        <a href="#nowhere"  @click="update" class="btn btn-success">提交</a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+<div th:replace="include/admin/adminFooter::html" ></div>
+</body>
+</html>

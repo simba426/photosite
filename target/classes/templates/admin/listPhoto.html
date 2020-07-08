@@ -66,6 +66,19 @@
                         vue.file = null;
                     });
                 },
+                deleteBean: function (id) {
+                    if(!checkDeleteLink())
+                        return;
+                    var url = this.uri+"/"+id;
+                    axios.delete(url).then(function(response){
+                        if(0!=response.data.length){
+                            alert(response.data);
+                        }
+                        else{
+                            vue.list(0);
+                        }
+                    });
+                },
                 getFile: function (event) {
                     this.file = event.target.files[0];
                 },
@@ -96,9 +109,14 @@
             <thead>
             <tr class="success">
                 <th>ID</th>
-                <th>图片</th>
-                <th>名字</th>
-                <th>分类名称</th>
+                <th>照片</th>
+                <th>照片名称</th>
+                <th>照片分类</th>
+                <th>照片描述</th>
+                <th>光圈大小</th>
+                <th>快门速度</th>
+                <th>ISO</th>
+                <th>相机型号</th>
                 <th>创建日期</th>
                 <th>所属用户</th>
                 <th>编辑</th>
@@ -118,13 +136,28 @@
                     {{bean.category}}
                 </td>
                 <td>
+                    {{bean.description}}
+                </td>
+                <td>
+                    {{bean.aperture}}
+                </td>
+                <td>
+                    {{bean.shutterSpeed}}
+                </td>
+                <td>
+                    {{bean.iso}}
+                </td>
+                <td>
+                    {{bean.camera}}
+                </td>
+                <td>
                     {{bean.createDate | formatDateFilter}}
                 </td>
                 <td>
                     {{bean.user.username}}
                 </td>
                 <td>
-                    <a :href="'admin_category_edit?id=' + bean.id "><span class="glyphicon glyphicon-edit"></span></a>
+                    <a :href="'photo_edit?id=' + bean.id "><span class="glyphicon glyphicon-edit"></span></a>
                 </td>
                 <td>
                     <a href="#nowhere"  @click="deleteBean(bean.id)"><span class="glyphicon glyphicon-trash"></span></a>

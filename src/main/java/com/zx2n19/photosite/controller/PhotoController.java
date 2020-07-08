@@ -59,14 +59,31 @@ public class PhotoController {
     }
 
     @DeleteMapping("/photos/{id}")
-    public String delete(@PathVariable("id") int id, HttpServletRequest request)  throws Exception {
+    public String delete(@PathVariable("id") int id, HttpServletRequest request) throws Exception {
         photoService.delete(id);
+        File  imageFolder= new File(request.getServletContext().getRealPath("img/photo"));
+        File file = new File(imageFolder,id+".jpg");
+        file.delete();
         return null;
     }
 
-    @PutMapping("/photos")
-    public Object update(@RequestBody Photo bean) throws Exception {
+    @PutMapping("/photos/{id}")
+    public Object update(Photo bean, MultipartFile image,HttpServletRequest request, HttpSession session) throws Exception {
+        /*
+        bean.setName(request.getParameter("name"));
+        bean.setCategory(request.getParameter("category"));
+        bean.setDescription(request.getParameter("description"));
+        bean.setAperture(request.getParameter("aperture"));
+        bean.setShutterSpeed(request.getParameter("shutterSpeed"));
+        bean.setIso(request.getParameter("iso"));
+        bean.setCamera(request.getParameter("camera"));
+        bean.setCreateDate(new Date());
+        bean.setUser((User)session.getAttribute("user"));
+         */
         photoService.update(bean);
+        if(image!=null) {
+            saveOrUpdateImageFile(bean, image, request);
+        }
         return bean;
     }
 }

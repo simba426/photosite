@@ -9,7 +9,7 @@ public class AdminPageController {
 
     @GetMapping(value="/admin")
     public String admin(){
-        return "redirect:user_list";
+        return "redirect:photo_list";
     }
 
     @GetMapping(value="/user_list")
@@ -17,9 +17,25 @@ public class AdminPageController {
         return "admin/listUser";
     }
 
+    @GetMapping(value="/user_comment_list")
+    public String listUserComment() {
+        return "admin/listUserComment";
+    }
+
+    @GetMapping(value="/photo_comment_list")
+    public String listPhotoComment() {
+        return "admin/listPhotoComment";
+    }
+
+
     @GetMapping(value="/photo_list")
-    public String photos() {
+    public String listPhoto() {
         return "admin/listPhoto";
+    }
+
+    @GetMapping(value="/photo_edit")
+    public String editPhoto() {
+        return "admin/editPhoto";
     }
 
 
