@@ -2,8 +2,6 @@ package com.zx2n19.photosite.service;
 
 
 import com.zx2n19.photosite.dao.CommentDAO;
-import com.zx2n19.photosite.dao.PhotoDAO;
-import com.zx2n19.photosite.dao.UserDAO;
 import com.zx2n19.photosite.pojo.Comment;
 import com.zx2n19.photosite.pojo.Photo;
 import com.zx2n19.photosite.pojo.User;
@@ -30,6 +28,13 @@ public class CommentService {
 
     public void delete(int id) {
         commentDAO.delete(id);
+    }
+
+
+
+    /***********************做到这里***********************/
+    public void deleteByPhoto(Photo photo) {
+        commentDAO.deleteByPhoto(photo);
     }
 
     public void update(Comment bean) {

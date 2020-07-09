@@ -27,6 +27,10 @@ public class AdminPageController {
         return "admin/listPhotoComment";
     }
 
+    @GetMapping(value="/liked_list")
+    public String listLiked() {
+        return "admin/listLiked";
+    }
 
     @GetMapping(value="/photo_list")
     public String listPhoto() {

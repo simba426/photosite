@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 
 @RestController
 public class CommentController {
@@ -35,12 +36,15 @@ public class CommentController {
     }
 
     @PostMapping("/comments")
-    public void add(@RequestBody Comment bean) {
+    public void add(@RequestBody Comment bean, HttpSession session) {
+        User user = (User)session.getAttribute("user");
+        bean.setUser(user);
+        bean.setCreateDate(new Date());
         commentService.add(bean);
     }
 
     @DeleteMapping("/comments/{id}")
-    public String delete(@PathVariable("id")int id, HttpServletRequest request) {
+    public String delete(@PathVariable("id")int id) {
         commentService.delete(id);
         return null;
     }

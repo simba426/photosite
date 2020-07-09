@@ -11,6 +11,7 @@
             pagination:{},
             beans: [],
             bean: {id:0, name:'',description:'', category:'', shutterSpeed:'',aperture:'',iso:'', camera:''},
+            like: {id:0, photo:{id:0}},
             file: null
         };
 
@@ -79,6 +80,13 @@
                         }
                     });
                 },
+                liked: function (id) {
+                    var url = "likeds";
+                    this.like.photo.id = id;
+                    axios.post(url, this.like).then(function(response){
+                        vue.list(0);
+                    });
+                },
                 getFile: function (event) {
                     this.file = event.target.files[0];
                 },
@@ -120,6 +128,8 @@
                 <th>创建日期</th>
                 <th>所属用户</th>
                 <th>编辑</th>
+                <th>查看评论</th>
+                <th>喜欢</th>
                 <th>删除</th>
             </tr>
             </thead>
@@ -158,6 +168,12 @@
                 </td>
                 <td>
                     <a :href="'photo_edit?id=' + bean.id "><span class="glyphicon glyphicon-edit"></span></a>
+                </td>
+                <td>
+                    <a :href="'photo_comment_list?pid=' + bean.id "><span class="glyphicon glyphicon-th-list"></span></a>
+                </td>
+                <td>
+                    <a href="#nowhere"  @click="liked(bean.id)">喜欢</a>
                 </td>
                 <td>
                     <a href="#nowhere"  @click="deleteBean(bean.id)"><span class="glyphicon glyphicon-trash"></span></a>
