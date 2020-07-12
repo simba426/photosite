@@ -24,7 +24,7 @@ public class LikedController {
         start = start<0?0:start;
         User user = (User)session.getAttribute("user");
         int uid = user.getId();
-        return likedService.listUserComment(uid, start, size,5 );
+        return likedService.listUserLiked(uid, start, size,5 );
     }
 
     @GetMapping("/likeds/{id}")

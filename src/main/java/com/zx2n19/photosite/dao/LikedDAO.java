@@ -7,7 +7,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface LikedDAO extends JpaRepository<Liked, Integer> {
     Page<Liked> findByUser(User user, Pageable pageable);
     Liked getByUserAndPhoto(User user, Photo photo);
+
+    List<Liked> findLikedByPhoto(Photo photo);
+    List<Liked> findLikedByUser(User user);
 }

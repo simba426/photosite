@@ -1,8 +1,7 @@
 package com.zx2n19.photosite.service;
 
-
-import com.zx2n19.photosite.dao.PhotoDAO;
-import com.zx2n19.photosite.pojo.Photo;
+import com.zx2n19.photosite.dao.ProductDAO;
+import com.zx2n19.photosite.pojo.Product;
 import com.zx2n19.photosite.pojo.User;
 import com.zx2n19.photosite.util.Page4Navigator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,34 +12,33 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PhotoService {
-
+public class ProductService {
     @Autowired
-    PhotoDAO photoDAO;
+    ProductDAO productDAO;
     @Autowired
     UserService userService;
 
-    public void add(Photo bean) {
-        photoDAO.save(bean);
+    public void add(Product bean) {
+        productDAO.save(bean);
+    }
+
+    public Product get(int id) {
+        return productDAO.findOne(id);
     }
 
     public void delete(int id) {
-        photoDAO.delete(id);
+        productDAO.delete(id);
     }
 
-    public Photo get(int id) {
-        return photoDAO.findOne(id);
+    public void update(Product bean) {
+        productDAO.save(bean);
     }
 
-    public void update(Photo bean) {
-        photoDAO.save(bean);
-    }
-
-    public Page4Navigator<Photo> listByUser(int uid, int start, int size, int navigatePages) {
+    public Page4Navigator<Product> listByUser(int uid, int start, int size, int navigatePages) {
         User user = userService.getById(uid);
         Sort sort = new Sort(Sort.Direction.DESC, "id");
         Pageable pageable = new PageRequest(start, size, sort);
-        Page<Photo> pageFromJPA =photoDAO.findByUser(user, pageable);
+        Page<Product> pageFromJPA =productDAO.findByUser(user, pageable);
         return new Page4Navigator<>(pageFromJPA,navigatePages);
     }
 

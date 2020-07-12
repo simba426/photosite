@@ -36,7 +36,7 @@ public class PhotoController {
         start = start<0?0:start;
         User user = (User)session.getAttribute("user");
         int uid = user.getId();
-        return photoService.list(uid, start, size,5 );
+        return photoService.listByUser(uid, start, size,5 );
     }
 
     @GetMapping("/photos/{id}")
@@ -66,6 +66,8 @@ public class PhotoController {
 
     @DeleteMapping("/photos/{id}")
     public String delete(@PathVariable("id") int id, HttpServletRequest request) throws Exception {
+        commentService.deleteByPhoto(id);
+        likedService.deleteByPhoto(id);
         photoService.delete(id);
         File imageFolder= new File(request.getServletContext().getRealPath("img/photo"));
         File file = new File(imageFolder,id+".jpg");

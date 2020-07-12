@@ -19,7 +19,7 @@ public class CommentController {
     @GetMapping("/photos/{pid}/comments")
     public Page4Navigator<Comment> listByPhoto(@PathVariable("pid") int pid, @RequestParam(value = "start", defaultValue = "0") int start, @RequestParam(value = "size", defaultValue = "5") int size) {
         start = start<0?0:start;
-        return commentService.listPhotoComment(pid, start, size,5);
+        return commentService.listByPhoto(pid, start, size,5);
     }
 
     @GetMapping("/comments")
@@ -27,7 +27,7 @@ public class CommentController {
         start = start<0?0:start;
         User user = (User)session.getAttribute("user");
         int uid = user.getId();
-        return commentService.listUserComment(uid, start, size,5 );
+        return commentService.listByUser(uid, start, size,5 );
     }
 
     @GetMapping("/comments/{id}")

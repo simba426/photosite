@@ -13,6 +13,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CommentService {
     @Autowired
@@ -33,8 +35,11 @@ public class CommentService {
 
 
     /***********************做到这里***********************/
-    public void deleteByPhoto(Photo photo) {
-        commentDAO.deleteByPhoto(photo);
+    public void deleteByPhoto(int pid) {
+        List<Comment> comments = commentDAO.findCommentByPhoto(photoService.get(pid));
+        for(Comment i : comments) {
+            commentDAO.delete(i.getId());
+        }
     }
 
     public void update(Comment bean) {
@@ -45,7 +50,7 @@ public class CommentService {
         return commentDAO.findOne(id);
     }
 
-    public Page4Navigator<Comment> listPhotoComment(int pid, int start, int size, int navigatePages) {
+    public Page4Navigator<Comment> listByPhoto(int pid, int start, int size, int navigatePages) {
         Photo photo = photoService.get(pid);
 
         Sort sort = new Sort(Sort.Direction.DESC, "id");
@@ -57,7 +62,7 @@ public class CommentService {
 
     }
 
-    public Page4Navigator<Comment> listUserComment(int uid, int start, int size, int navigatePages) {
+    public Page4Navigator<Comment> listByUser(int uid, int start, int size, int navigatePages) {
         User user = userService.getById(uid);
 
         Sort sort = new Sort(Sort.Direction.DESC, "id");

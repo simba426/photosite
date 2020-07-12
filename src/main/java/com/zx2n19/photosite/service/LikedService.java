@@ -12,6 +12,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LikedService {
     @Autowired
@@ -37,19 +39,23 @@ public class LikedService {
         likedDAO.save(bean);
     }
 
+    public void deleteByPhoto(int pid) {
+        List<Liked> likeds = likedDAO.findLikedByPhoto(photoService.get(pid));
+        for(Liked i : likeds) {
+            likedDAO.delete(i.getId());
+        }
+    }
+
     public boolean isExist(User user, Photo photo) {
         Liked liked = likedDAO.getByUserAndPhoto(user, photo);
         return null!=liked;
     }
 
-    public Page4Navigator<Liked> listUserComment(int uid, int start, int size, int navigatePages) {
+    public Page4Navigator<Liked> listUserLiked(int uid, int start, int size, int navigatePages) {
         User user = userService.getById(uid);
-
         Sort sort = new Sort(Sort.Direction.DESC, "id");
         Pageable pageable = new PageRequest(start, size, sort);
-
         Page<Liked> pageFromJPA =likedDAO.findByUser(user, pageable);
-
         return new Page4Navigator<>(pageFromJPA,navigatePages);
 
     }
