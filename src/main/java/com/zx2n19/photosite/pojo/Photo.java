@@ -39,4 +39,7 @@ public class Photo {
     private String camera;
     private Date createDate;
 
+    @Transient
+    private int commentCount;
+
 }

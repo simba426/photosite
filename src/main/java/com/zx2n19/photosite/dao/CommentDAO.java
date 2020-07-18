@@ -16,4 +16,6 @@ public interface CommentDAO extends JpaRepository<Comment, Integer> {
     Page<Comment> findByUser(User user, Pageable pageable);
 
     List<Comment> findCommentByPhoto(Photo photo);
+    List<Comment> findByPhotoOrderByIdDesc(Photo photo);
+    int countByPhoto(Photo photo);
 }

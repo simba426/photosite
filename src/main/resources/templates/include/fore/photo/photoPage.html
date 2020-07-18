@@ -1,0 +1,56 @@
+<div th:fragment="html">
+    <script>
+        $(function(){
+            var pid = getUrlParms("pid");
+            var data4Vue = {
+                uri:'forephoto',
+                p:'',
+                category:null,
+                firstProductImage:null,
+                comments:[],
+                showDetail:true,
+                showReview:false,
+                user:{name:'', password:''}
+            };
+            //ViewModel
+            var vue = new Vue({
+                el: '#workingArea',
+                data: data4Vue,
+                mounted:function(){ //mounted　表示这个 Vue 对象加载成功了
+                    linkDefaultActions();
+                    this.load();
+                },
+                methods: {
+                    load:function(){
+                        var url =  this.uri+"/"+pid;
+                        axios.get(url).then(function(response) {
+                            var result = response.data;
+                            vue.p=result.data.photo;
+                            vue.comments=result.data.comments;
+
+                            vue.category = vue.p.category;
+                        });
+
+                    },
+                    toggle2Detail:function(){
+                        this.showDetail=true;
+                        this.showReview=false;
+                    },
+                    toggle2Review:function(){
+                        this.showDetail=false;
+                        this.showReview=true;
+                    }
+                }
+            });
+
+
+        });
+    </script>
+
+    <title>{{p.name}}</title>
+    <div class="productPageDiv">
+        <div th:replace="include/fore/photo/imgAndInfo::html" ></div>
+        <div th:replace="include/fore/photo/photoComment::html" ></div>
+        <div th:replace="include/fore/photo/photoDetail::html" ></div>
+    </div>
+</div>

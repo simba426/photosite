@@ -449,8 +449,7 @@ div.loginDivInProductPage {
 
 div.loginSmallDiv {
 	background-color: white;
-	position: absolute;
-	right: 180px;
+	margin: auto;
 	top: 180px;
 	width: 350px;
 	height: 400px;
@@ -715,6 +714,10 @@ div.simpleSearchDiv button {
 
 div.imgAndInfo {
 	margin: 40px 20px;
+}
+
+div.imgAndInfo2 {
+	margin: 40px auto;
 }
 
 div.imgAndInfo img.bigImg {
@@ -1026,7 +1029,13 @@ span.productReviewTopReviewLinkNumber {
 }
 
 div.productDetailImagesPart img {
-	display: block; margin 20px 0px;
+	display: block; margin: 20px 0px;
+	width: 790px;
+}
+
+div.productDetailImagesPart2 img {
+	display: block;
+	margin: 40px auto;
 	width: 790px;
 }
 

@@ -12,6 +12,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PhotoService {
 
@@ -19,6 +21,8 @@ public class PhotoService {
     PhotoDAO photoDAO;
     @Autowired
     UserService userService;
+    @Autowired
+    CommentService commentService;
 
     public void add(Photo bean) {
         photoDAO.save(bean);
@@ -34,6 +38,15 @@ public class PhotoService {
 
     public void update(Photo bean) {
         photoDAO.save(bean);
+    }
+
+    public List<Photo> list() {
+        Sort sort = new Sort(Sort.Direction.DESC, "id");
+        return photoDAO.findAll(sort);
+    }
+
+    public void setCommentNumber(Photo photo) {
+        photo.setCommentCount(commentService.getCount(photo));
     }
 
     public Page4Navigator<Photo> listByUser(int uid, int start, int size, int navigatePages) {

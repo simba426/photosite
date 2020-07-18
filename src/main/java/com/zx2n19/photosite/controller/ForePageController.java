@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class ForePageController {
+
     @GetMapping(value="/")
     public String index() {
         return "redirect:login";
@@ -37,5 +38,10 @@ public class ForePageController {
     public String logout(HttpSession session) {
         session.removeAttribute("user");
         return "redirect:home";
+    }
+
+    @GetMapping("/photo")
+    public String photo() {
+        return "fore/photo";
     }
 }

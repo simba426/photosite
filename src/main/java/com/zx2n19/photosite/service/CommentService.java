@@ -4,6 +4,7 @@ package com.zx2n19.photosite.service;
 import com.zx2n19.photosite.dao.CommentDAO;
 import com.zx2n19.photosite.pojo.Comment;
 import com.zx2n19.photosite.pojo.Photo;
+import com.zx2n19.photosite.pojo.Product;
 import com.zx2n19.photosite.pojo.User;
 import com.zx2n19.photosite.util.Page4Navigator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +35,20 @@ public class CommentService {
 
 
 
-    /***********************做到这里***********************/
     public void deleteByPhoto(int pid) {
         List<Comment> comments = commentDAO.findCommentByPhoto(photoService.get(pid));
         for(Comment i : comments) {
             commentDAO.delete(i.getId());
         }
+    }
+
+    public List<Comment> listByPhoto(Photo photo) {
+        List<Comment> comments = commentDAO.findByPhotoOrderByIdDesc(photo);
+        return comments;
+    }
+
+    public int getCount(Photo photo) {
+        return commentDAO.countByPhoto(photo);
     }
 
     public void update(Comment bean) {
