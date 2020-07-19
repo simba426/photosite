@@ -60,7 +60,7 @@
 
             var data4Vue = {
                 uri:'forehome',
-                categories: []
+                photos: []
             };
             //ViewModel
             var vue = new Vue({
@@ -74,23 +74,15 @@
                     load:function(){
                         var url =  this.uri;
                         axios.get(url).then(function(response) {
-                            vue.categories = response.data;
+                            vue.photos = response.data;
                             vue.$nextTick(function(){
                                 //要等渲染结束之后，才来进行监听，否则他们都没有被创建出来，监听也没有意义呀
                                 homePageRegisterListeners();
                             })
                         });
                     }
-                },
-                filters:{
-                    subTitleFilter:function(value) {
-                        if (!value) return ''; //如果为空，则返回空字符串
-                        return value.split(" ")[0]; //根据空格拆分，并且只获取数组第一个值
-                    }
                 }
             });
-
-
         });
 
     </script>
@@ -98,7 +90,6 @@
 
     <title>模仿天猫官网</title>
     <div class="homepageDiv">
-        <div th:replace="include/fore/home/categoryAndcarousel::html" ></div>
         <div th:replace="include/fore/home/homepageCategoryProducts::html" ></div>
     </div>
 </div>

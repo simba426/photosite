@@ -10,6 +10,7 @@
                 comments:[],
                 showDetail:true,
                 showReview:false,
+                newcomment: {id:0, content:'', photo:{id:0}},
                 user:{name:'', password:''}
             };
             //ViewModel
@@ -32,6 +33,16 @@
                         });
 
                     },
+                    doreview:function(){
+                        if(this.newcomment.content == '')
+                            return;
+                        var url = 'comments';
+                        this.newcomment.photo.id = pid;
+                        axios.post(url, this.newcomment).then(function(response) {
+                            vue.load();
+                            vue.newcomment = {id:0, content:'', photo:{id:0}};
+                        });
+                    },
                     toggle2Detail:function(){
                         this.showDetail=true;
                         this.showReview=false;
@@ -50,7 +61,7 @@
     <title>{{p.name}}</title>
     <div class="productPageDiv">
         <div th:replace="include/fore/photo/imgAndInfo::html" ></div>
-        <div th:replace="include/fore/photo/photoComment::html" ></div>
         <div th:replace="include/fore/photo/photoDetail::html" ></div>
+        <div th:replace="include/fore/photo/photoComment::html" ></div>
     </div>
 </div>

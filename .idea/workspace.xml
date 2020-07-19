@@ -2,26 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e428411-c6b5-415c-b3d5-382a4905bdc5" name="Default Changelist" comment="first commit&#10;with User class finished and adminUI prepared">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/include/fore/modal4login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/lunbo/2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/_state/global-49.st" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/elasticsearch/nodes/0/_state/global-60.st" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForeRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForeRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/dao/CommentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/dao/CommentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/pojo/Photo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/pojo/Photo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/PhotoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/PhotoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fore/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fore/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fore/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fore/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fore/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fore/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fore/registerSuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fore/registerSuccess.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/include/fore/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/include/fore/loginPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/carousel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/categoryAndcarousel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/categoryMenu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homepageCategoryProducts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homepageCategoryProducts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/productsAsideCategorys.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoComment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoComment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fore/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/fore/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/photo/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fore/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fore/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fore/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fore/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fore/registerSuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fore/registerSuccess.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/include/fore/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/include/fore/loginPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/lunbo/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/lunbo/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fore/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fore/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/include/fore/home/carousel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/include/fore/home/categoryAndcarousel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/include/fore/home/categoryMenu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/include/fore/home/homePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/include/fore/home/homePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/include/fore/home/homepageCategoryProducts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/include/fore/home/homepageCategoryProducts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/include/fore/home/productsAsideCategorys.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -79,43 +81,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoComment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoDetail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/dao/CommentDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="420">
+              <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/CommentService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fore/photo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1360#1361#0" expanded="true" />
-                <element signature="e#1392#1393#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homePage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="85" column="11" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoPage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="43" column="27" lean-forward="true" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/listPhotoComment.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="44" column="59" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -123,55 +129,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fore/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homePage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="84" column="25" lean-forward="true" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
+            <state relative-caret-position="60">
+              <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/pojo/Photo.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homepageCategoryProducts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+            <state relative-caret-position="375">
+              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/PhotoService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/fore/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="48" column="62" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1125#1126#0" expanded="true" />
-                <element signature="e#1164#1165#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForeRESTController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="184">
+              <caret line="293" selection-start-line="293" selection-end-line="293" />
             </state>
           </provider>
         </entry>
@@ -179,10 +161,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/imgAndInfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            <state relative-caret-position="120">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding>
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -203,6 +185,8 @@
     <findStrings>
       <find>page</find>
       <find>productDetailImagesPart</find>
+      <find>productDetailImagesPart2</find>
+      <find>photo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,11 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/util/ImageUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/config/CORSConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/exception/GloabalExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/config/WebMvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/editPhoto.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/pojo/Comment.java" />
@@ -249,19 +228,24 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/fore/login.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fore/product.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/product/productPage.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoPage.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForePageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fore/photo.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/imgAndInfo.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/fore/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/pojo/Photo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/PhotoService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForeRESTController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoDetail.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoComment.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/dao/CommentDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/CommentService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fore/home.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForeRESTController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/carousel.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/categoryAndcarousel.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homePage.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homepageCategoryProducts.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/back/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/fore/style.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoDetail.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoComment.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoPage.html" />
       </list>
     </option>
   </component>
@@ -285,6 +269,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -433,13 +418,36 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="include" type="462c0819:PsiDirectoryNode" />
               <item name="fore" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="photo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photosite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photosite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photosite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photosite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photosite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photosite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="lunbo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -457,7 +465,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/include/fore" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/img/lunbo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -466,22 +474,22 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/include/fore" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/fore" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/util" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/img/photo" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static/admin" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin/static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zx2n19.photosite.exception" />
       <recent name="com.zx2n19.photosite.config" />
       <recent name="com.zx2n19.photosite.util" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/img/photo" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/admin" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin/static" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/img/lunbo" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/include/fore" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/fore" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/util" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -554,6 +562,7 @@
       <workItem from="1594858873866" duration="85000" />
       <workItem from="1594859262517" duration="384000" />
       <workItem from="1595032191870" duration="9999000" />
+      <workItem from="1595117556587" duration="11505000" />
     </task>
     <task id="LOCAL-00001" summary="first commit&#10;with User class finished and adminUI prepared">
       <created>1593071206122</created>
@@ -574,12 +583,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100976000" />
+    <option name="totallyTimeSpent" value="112481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984456" visible="true" weight="0.23588924" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984456" visible="true" weight="0.23801917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -623,124 +632,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="first commit&#10;with User class finished and adminUI prepared" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/LikedController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/admin/adminNavigator.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="57" lean-forward="true" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/exception/GloabalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/dao/ProductDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/LikedService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="60" column="5" selection-start-line="53" selection-start-column="4" selection-end-line="60" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/PhotoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/CommentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.23/tomcat-embed-core-8.5.23.jar!/javax/servlet/http/HttpServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="232" selection-start-line="232" selection-end-line="232" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/pojo/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/editPhoto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-798">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/AdminPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -876,30 +767,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fore/product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/product/productDetail.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/product/productPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/product/productReview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fore/product.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/product/productDetail.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/product/productPage.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/product/productReview.html" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/pojo/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -917,49 +788,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/listPhoto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="139" column="73" selection-start-line="139" selection-start-column="46" selection-end-line="139" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/modal4login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fore/photo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForePageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/fore/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="1037" column="22" selection-start-line="1037" selection-start-column="22" selection-end-line="1037" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -970,65 +802,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/PhotoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="48" column="62" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1125#1126#0" expanded="true" />
-            <element signature="e#1164#1165#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/pojo/Photo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForeRESTController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/imgAndInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoComment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/dao/CommentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="135">
           <caret line="18" column="42" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1038,27 +814,206 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/CommentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="495">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1392#1393#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/pojo/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/img/lunbo/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForeRESTController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/listPhoto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2085">
+          <caret line="139" column="73" selection-start-line="139" selection-start-column="46" selection-end-line="139" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/service/PhotoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="48" column="62" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx2n19/photosite/controller/ForePageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+          <folding>
+            <element signature="e#963#964#0" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap/3.3.6/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="4" column="3478" selection-start-line="4" selection-start-column="3478" selection-end-line="4" selection-end-column="3478" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap/3.3.6/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="332" column="1" selection-start-line="332" selection-start-column="1" selection-end-line="332" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/back/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fore/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="60">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/home/categoryAndcarousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="18" selection-start-line="7" selection-start-column="12" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/fore/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="293" selection-start-line="293" selection-end-line="293" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/home/carousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/home/productsAsideCategorys.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/home/categoryMenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homepageCategoryProducts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/imgAndInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/listUserComment.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fore/photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/home/homePage.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="85" column="11" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoComment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/listPhotoComment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="44" column="59" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/fore/photo/photoPage.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="84" column="25" lean-forward="true" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
+          <caret line="43" column="27" lean-forward="true" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
         </state>
       </provider>
     </entry>

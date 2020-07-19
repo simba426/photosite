@@ -24,6 +24,11 @@ public class ForeRESTController {
     @Autowired
     CommentService commentService;
 
+    @GetMapping("/forehome")
+    public Object home() {
+        return photoService.list();
+    }
+
     @GetMapping("/forephoto/{pid}")
     public Object photo(@PathVariable("pid") int pid) {
         Photo photo = photoService.get(pid);

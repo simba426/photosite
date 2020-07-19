@@ -1,7 +1,6 @@
 <div th:fragment="html"> 
-	<div class="productReviewDiv" v-show="showReview" >
+	<div class="productReviewDiv">
 		<div class="productReviewTopPart">
-			<a  href="#nowhere" class="productReviewTopPartSelectedLink" @click="toggle2Detail">照片详情</a>
 			<a  href="#nowhere" class="selected">评论 <span class="productReviewTopReviewLinkNumber">{{p.commentCount}}</span> </a>
 		</div>
 		
@@ -20,6 +19,19 @@
 				</div>
 			
 				<div style="clear:both"></div>			
+			</div>
+
+			<div class="makeReviewDiv">
+				<div class="makeReviewText">喜欢就评论一下吧</div>
+				<table class="makeReviewTable">
+					<tr>
+						<td class="makeReviewTableFirstTD">撰写评论</td>
+						<td><textarea v-model="newcomment.content"></textarea></td>
+					</tr>
+				</table>
+				<div class="makeReviewButtonDiv">
+					<button @click="doreview" type="submit">提交评价</button>
+				</div>
 			</div>
 		</div>
 	</div>

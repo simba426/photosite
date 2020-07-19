@@ -1,25 +1,31 @@
 <div th:fragment="html">
-    <div class="homepageCategoryProducts">
-        <div class="eachHomepageCategoryProducts" v-for="c in categories">
-            <div class="left-mark"></div>
-            <span class="categoryTitle">{{c.name}}</span>
-            <br>
-            <div class="productItem"  v-for="p,index in c.products" v-if="index<5" >
-                <a :href="'product?pid='+p.id">
-                    <img width="100px" :src="'img/productSingle_middle/'+p.firstProductImage.id+'.jpg'">
-                </a>
+    <div class="categoryWithCarousel">
+        <div class="headbar show1">
+            <div class="head">
+                <span style="margin-left:10px" class="glyphicon glyphicon-th-list"></span>
+                <span style="margin-left:10px" >热门照片</span>
+            </div>
+            <div class="rightMenu">
+                <span><a href="">商品列表</a></span>
+                <span><a href="">用户列表</a></span>
+            </div>
 
-                <a class="productItemDescLink" href="'product?pid='+p.id">
-									<span class="productItemDesc">[热销]
-									{{p.name | subStringFilter(0,20)}}
-									</span>
+        </div>
+        <div class="carouselDiv">
+            <img  class="carouselImage" src="img/lunbo/1.jpg" >
+        </div>
+    </div>
+    <div class="homepageCategoryProducts">
+        <div class="eachHomepageCategoryProducts">
+            <div class="left-mark"></div>
+            <span class="categoryTitle">热门照片</span>
+            <br>
+            <div class="photoItem"  v-for="p in photos">
+                <a :href="'photo?pid='+p.id">
+                    <img :src="'img/photo/'+p.id+'.jpg'">
                 </a>
-                <span class="productPrice">
-									{{p.promotePrice | formatMoneyFilter}}
-								</span>
             </div>
             <div style="clear:both"></div>
         </div>
-        <img id="endpng" class="endpng" src="img/site/end.png">
     </div>
 </div>

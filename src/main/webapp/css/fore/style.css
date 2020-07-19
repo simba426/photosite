@@ -104,7 +104,7 @@ div.carouselBackgroundDiv{
 }
 
 div.categoryWithCarousel div.headbar {
-	background-color: #DD2727;
+	background-color: black;
 }
 
 div.carousel-of-product {
@@ -177,7 +177,7 @@ div.categoryWithCarousel div.rightMenu a {
 
 div.categoryWithCarousel div.head {
 	width: 200px;
-	background-color: #C60A0A;
+	background-color: black;
 	height: 36px;
 	line-height: 36px;
 	font-size: 16px;
@@ -251,10 +251,20 @@ img.logo {
 }
 
 div.homepageCategoryProducts {
-	background-color: #F5F5F5;
+	background-color: white;
 	padding: 50px 10px 50px 10px;
 	margin: 10px auto;
-	max-width: 1013px;
+}
+div.carouselDiv {
+	background-color: black;
+	width: 100%;
+	height: 310px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 }
 
 div.left-mark {
@@ -268,7 +278,7 @@ div.left-mark {
 span.categoryTitle {
 	font-size: 16px;
 	margin-left: 30px;
-	color: #646464;
+	color: black;
 	font-weight: bold;
 }
 
@@ -280,6 +290,32 @@ div.productItem {
 	margin: 8px 4px;
 	float: left;
 	cursor: pointer;
+}
+
+div.photoItem {
+	width: 610px;
+	height: 410px;
+	border: 1px solid white;
+	background-color: white;
+	margin: 8px 4px;
+	float: left;
+	cursor: pointer;
+}
+
+a.photoItemDescLink {
+	display: inline-block;
+	height: 66px;
+}
+
+div.photoItem:hover {
+	border: 1px solid #C40000;
+}
+
+div.photoItem span.photoItemDesc {
+	font-size: 12px;
+	color: #666666;
+	display: block;
+	padding: 16px;
 }
 
 a.productItemDescLink {
@@ -313,6 +349,17 @@ div.eachHomepageCategoryProducts {
 div.productItem img {
 	width: 187px;
 	height: 190px;
+}
+
+div.photoItem img {
+	width: 600px;
+	height: 400px;
+	margin: 5px;
+}
+
+div.photoItem  img:hover {
+	opacity: 0.7;
+	filter: alpha(opacity = 70);
 }
 
 div.productItem  img:hover {
@@ -2280,7 +2327,8 @@ a.productLink {
 }
 
 img.carouselImage {
-	height: 510px !important;
+	height: 300px;
+	margin: 0 auto;
 }
 
 div.noMatch {
