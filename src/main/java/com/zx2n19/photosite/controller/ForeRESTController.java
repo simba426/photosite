@@ -2,9 +2,11 @@ package com.zx2n19.photosite.controller;
 
 import com.zx2n19.photosite.pojo.Comment;
 import com.zx2n19.photosite.pojo.Photo;
+import com.zx2n19.photosite.pojo.Product;
 import com.zx2n19.photosite.pojo.User;
 import com.zx2n19.photosite.service.CommentService;
 import com.zx2n19.photosite.service.PhotoService;
+import com.zx2n19.photosite.service.ProductService;
 import com.zx2n19.photosite.service.UserService;
 import com.zx2n19.photosite.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,8 @@ public class ForeRESTController {
     PhotoService photoService;
     @Autowired
     CommentService commentService;
+    @Autowired
+    ProductService productService;
 
     @GetMapping("/forehome")
     public Object home() {
@@ -44,13 +48,23 @@ public class ForeRESTController {
         return Result.success(map);
     }
 
+    @GetMapping("/forepersonal/{uid}")
+    public Object personal(@PathVariable("uid") int uid) {
+        User user = userService.getById(uid);
+        List<Photo> photos = photoService.listByUser(user);
+        List<Product> products = productService.listByUser(user);
+        Map<String, Object> map = new HashMap<>();
+        map.put("photos", photos);
+        map.put("products", products);
+        map.put("user", user);
+
+        return Result.success(map);
+    }
+
     @PostMapping("/foreregister")
     public Object register(@RequestBody User user) {
         String username =  user.getUsername();
         String password = user.getPassword();
-        System.out.println(username);
-        System.out.println(password);
-        int identity = user.getIdentity();
         username = HtmlUtils.htmlEscape(username);
         user.setUsername(username);
         boolean exist = userService.isExist(username);
@@ -61,10 +75,7 @@ public class ForeRESTController {
         }
 
         user.setPassword(password);
-        user.setIdentity(identity);
-
         userService.add(user);
-
         return Result.success();
     }
 
@@ -83,5 +94,13 @@ public class ForeRESTController {
             session.setAttribute("user", user);
             return Result.success();
         }
+    }
+
+    @GetMapping("/forecheckLogin")
+    public Object checkLogin( HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        if(null!=user)
+            return Result.success();
+        return Result.fail("未登录");
     }
 }

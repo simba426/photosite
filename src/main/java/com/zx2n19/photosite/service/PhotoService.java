@@ -45,6 +45,10 @@ public class PhotoService {
         return photoDAO.findAll(sort);
     }
 
+    public List<Photo> listByUser(User user) {
+        return photoDAO.findByUserOrderByIdDesc(user);
+    }
+
     public void setCommentNumber(Photo photo) {
         photo.setCommentCount(commentService.getCount(photo));
     }

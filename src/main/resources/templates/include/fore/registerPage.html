@@ -5,7 +5,7 @@
                 var data4Vue = {
                     uri:'foreregister',
                     result: [],
-                    user:{username:'', password:'', repeatpassword:'', identity:''}
+                    user:{username:'', password:'', repeatpassword:''}
                 };
                 //ViewModel
                 var vue = new Vue({
@@ -19,11 +19,6 @@
                             var url =  this.uri;
                             if(0==this.user.username.length){
                                 $("span.errorMessage").html("请输入用户名");
-                                $("div.registerErrorMessageDiv").css("visibility","visible");
-                                return;
-                            }
-                            if(0==this.user.identity.length){
-                                $("span.errorMessage").html("请选择注册类型");
                                 $("div.registerErrorMessageDiv").css("visibility","visible");
                                 return;
                             }
@@ -77,6 +72,7 @@
                     <td class="registerTableLeftTD">登陆名</td>
                     <td  class="registerTableRightTD"><input v-model="user.username" placeholder="会员名一旦设置成功，无法修改" > </td>
                 </tr>
+                <!--
                 <tr>
                     <td class="registerTableLeftTD">注册类型</td>
                     <td class="registerTableRightTD">
@@ -88,6 +84,7 @@
                         <span>Identity: {{ user.identity }}</span>
                     </td>
                 </tr>
+                -->
                 <tr>
                     <td  class="registerTip registerTableLeftTD">设置登陆密码</td>
                     <td  class="registerTableRightTD">登陆时验证，保护账号信息</td>

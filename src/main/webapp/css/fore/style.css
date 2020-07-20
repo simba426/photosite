@@ -2176,7 +2176,23 @@ div.makeReviewButtonDiv {
 	padding: 15px;
 }
 
+div.makeLikedButtonDiv {
+	background-color: white;
+	text-align: center;
+	padding: 15px;
+}
+
 div.makeReviewButtonDiv button {
+	width: 72px;
+	height: 26px;
+	border-radius: 2px;
+	background-color: #C40000;
+	color: white;
+	border-width: 0px;
+	font-weight: bold;
+}
+
+div.makeLikedButtonDiv button {
 	width: 72px;
 	height: 26px;
 	border-radius: 2px;

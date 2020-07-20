@@ -11,6 +11,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductService {
     @Autowired
@@ -40,6 +42,10 @@ public class ProductService {
         Pageable pageable = new PageRequest(start, size, sort);
         Page<Product> pageFromJPA =productDAO.findByUser(user, pageable);
         return new Page4Navigator<>(pageFromJPA,navigatePages);
+    }
+
+    public List<Product> listByUser(User user) {
+        return productDAO.findByUserOrderByIdDesc(user);
     }
 
 }

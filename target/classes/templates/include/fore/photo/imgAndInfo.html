@@ -1,9 +1,86 @@
 <div th:fragment="html">
-	 
+
+	<script>
+		function imgAndInfoPageRegisterListeners(vue){
+			$(".likedLink").click(function(){
+				var url = "forecheckLogin";
+				axios.get(url).then(function(response) {
+					if(0==response.data.code){
+						var pid = vue.p.id;
+						var url = 'likeds';
+						vue.like.photo.id = pid;
+						axios.post(url, vue.like).then(function(response) {
+							$(".likedLink").html("已添加到收藏");
+							$(".likedLink").attr("disabled","disabled");
+							$(".likedLink").css("background-color","lightgray")
+							$(".likedLink").css("border-color","lightgray")
+							$(".likedLink").css("color","black")
+						});
+					}
+					else{
+						$("#loginModal").modal('show');
+					}
+				});
+			});
+
+			$(".commentLink").click(function(){
+				var url = "forecheckLogin";
+				axios.get(url).then(function(response) {
+					if(0==response.data.code){
+						var pid = vue.p.id;
+						if(vue.newcomment.content == '')
+							return;
+						var url = 'comments';
+						vue.newcomment.photo.id = pid;
+						axios.post(url, vue.newcomment).then(function(response) {
+							vue.load();
+							vue.newcomment = {id:0, content:'', photo:{id:0}};
+						});
+					}
+					else{
+						$("#loginModal").modal('show');
+					}
+				});
+			});
+
+			$("button.loginSubmitButton").click(function(){
+				var url =  "forelogin";
+				if(0==vue.user.username.length){
+					$("span.errorMessage").html("请输入用户名");
+					$("div.loginErrorMessageDiv").css("visibility","visible");
+					return;
+				}
+				if(0==vue.user.password.length){
+					$("span.errorMessage").html("请输入密码");
+					$("div.loginErrorMessageDiv").css("visibility","visible");
+					return;
+				}
+
+				axios.post(url,vue.user).then(function(response) {
+					var result = response.data;
+					if(result.code==0){
+						location.href="photo?pid="+vue.p.id;
+					}
+					else{
+						$("span.errorMessage").html(result.message);
+						$("div.loginErrorMessageDiv").css("visibility","visible");
+					}
+				});
+			});
+		}
+
+	</script>
+
 	<div class="imgAndInfo2">
+		<h2>{{p.name}}</h2>
+		<a href="#nowhere">{{p.user.username}}</a>
 
 		<div class="productDetailImagesPart2">
 			<img :src="'img/photo/'+p.id+'.jpg'">
+		</div>
+
+		<div class="makeLikedButtonDiv">
+			<a href="#nowhere" class="likedLink"><button type="submit" class="likedButton">加入收藏</button></a>
 		</div>
 	     
 	    <div style="clear:both"></div>

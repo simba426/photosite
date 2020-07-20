@@ -1,4 +1,4 @@
-<div th:fragment="html"> 
+<div th:fragment="html">
 	<div class="productReviewDiv">
 		<div class="productReviewTopPart">
 			<a  href="#nowhere" class="selected">评论 <span class="productReviewTopReviewLinkNumber">{{p.commentCount}}</span> </a>
@@ -30,7 +30,7 @@
 					</tr>
 				</table>
 				<div class="makeReviewButtonDiv">
-					<button @click="doreview" type="submit">提交评价</button>
+					<a href="#nowhere" class="commentLink"><button class="commentButton" type="submit">提交评价</button></a>
 				</div>
 			</div>
 		</div>

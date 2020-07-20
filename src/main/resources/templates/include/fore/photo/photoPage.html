@@ -5,13 +5,10 @@
             var data4Vue = {
                 uri:'forephoto',
                 p:'',
-                category:null,
-                firstProductImage:null,
                 comments:[],
-                showDetail:true,
-                showReview:false,
                 newcomment: {id:0, content:'', photo:{id:0}},
-                user:{name:'', password:''}
+                like: {id:0, photo:{id:0}},
+                user:{username:'', password:''}
             };
             //ViewModel
             var vue = new Vue({
@@ -28,8 +25,10 @@
                             var result = response.data;
                             vue.p=result.data.photo;
                             vue.comments=result.data.comments;
-
                             vue.category = vue.p.category;
+                            vue.$nextTick(function(){
+                                imgAndInfoPageRegisterListeners(vue);
+                            })
                         });
 
                     },
@@ -43,13 +42,13 @@
                             vue.newcomment = {id:0, content:'', photo:{id:0}};
                         });
                     },
-                    toggle2Detail:function(){
-                        this.showDetail=true;
-                        this.showReview=false;
-                    },
-                    toggle2Review:function(){
-                        this.showDetail=false;
-                        this.showReview=true;
+                    doliked:function(){
+                        var url = 'likeds';
+                        this.like.photo.id = pid;
+                        axios.post(url, this.like).then(function(response) {
+                            alert("已添加到收藏")
+                            //vue.load();
+                        });
                     }
                 }
             });
