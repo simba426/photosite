@@ -32,9 +32,6 @@ public class Product {
     private int stock;
     private Date createDate;
 
-    @Transient
-    private ProductImage firstProductImage;
-
     @ManyToOne
     @JoinColumn(name="uid")
     private User user;

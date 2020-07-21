@@ -6,7 +6,9 @@
                 uri:'forepersonal',
                 user: '',
                 photos: [],
-                products: []
+                products: [],
+                showPhoto:true,
+                showProduct:false
             };
             //ViewModel
             var vue = new Vue({
@@ -23,8 +25,16 @@
                             var result = response.data;
                             vue.user = result.data.user;
                             vue.photos = result.data.photos;
-                            vue.comments = result.data.comments;
+                            vue.products = result.data.products;
                         });
+                    },
+                    toggle2Photo:function(){
+                        this.showPhoto=true;
+                        this.showProduct=false;
+                    },
+                    toggle2Product:function(){
+                        this.showPhoto=false;
+                        this.showProduct=true;
                     }
                 }
             });
@@ -35,7 +45,7 @@
 
     <title>Photosite</title>
     <div class="homepageDiv">
-        <div th:replace="include/fore/personalpage/personalPage::html" ></div>
+        <h1>{{user.username}}</h1>
         <div th:replace="include/fore/personalpage/personalPhoto::html" ></div>
         <div th:replace="include/fore/personalpage/personalProduct::html" ></div>
     </div>

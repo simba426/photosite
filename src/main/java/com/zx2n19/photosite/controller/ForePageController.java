@@ -44,4 +44,9 @@ public class ForePageController {
     public String photo() {
         return "fore/photo";
     }
+
+    @GetMapping("/personalpage")
+    public String personal() {
+        return "fore/personalpage";
+    }
 }

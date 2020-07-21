@@ -33,8 +33,6 @@ public class CommentService {
         commentDAO.delete(id);
     }
 
-
-
     public void deleteByPhoto(int pid) {
         List<Comment> comments = commentDAO.findCommentByPhoto(photoService.get(pid));
         for(Comment i : comments) {

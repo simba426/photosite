@@ -31,11 +31,7 @@ public class ProductImageController {
     public List<ProductImage> list(@RequestParam("type") String type, @PathVariable("pid") int pid) {
         Product product = productService.get(pid);
 
-        if(ProductImageService.type_single.equals(type)) {
-            List<ProductImage> singles =  productImageService.listSingleProductImages(product);
-            return singles;
-        }
-        else if(ProductImageService.type_detail.equals(type)) {
+        if(ProductImageService.type_detail.equals(type)) {
             List<ProductImage> details =  productImageService.listDetailProductImages(product);
             return details;
         }
@@ -53,10 +49,7 @@ public class ProductImageController {
 
         productImageService.add(bean);
         String folder = "img/";
-        if(ProductImageService.type_single.equals(bean.getType())){
-            folder +="productSingle";
-        }
-        else{
+        if(ProductImageService.type_detail.equals(bean.getType())){
             folder +="productDetail";
         }
         File imageFolder= new File(request.getServletContext().getRealPath(folder));
@@ -71,7 +64,7 @@ public class ProductImageController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        /*
         if(ProductImageService.type_single.equals(bean.getType())){
             String imageFolder_small= request.getServletContext().getRealPath("img/productSingle_small");
             String imageFolder_middle= request.getServletContext().getRealPath("img/productSingle_middle");
@@ -82,6 +75,7 @@ public class ProductImageController {
             ImageUtil.resizeImage(file, 56, 56, f_small);
             ImageUtil.resizeImage(file, 217, 190, f_middle);
         }
+         */
 
         return bean;
     }
@@ -92,15 +86,14 @@ public class ProductImageController {
         productImageService.delete(id);
 
         String folder = "img/";
-        if(ProductImageService.type_single.equals(bean.getType()))
-            folder +="productSingle";
-        else
+        if(ProductImageService.type_detail.equals(bean.getType()))
             folder +="productDetail";
 
         File  imageFolder= new File(request.getServletContext().getRealPath(folder));
         File file = new File(imageFolder,bean.getId()+".jpg");
         String fileName = file.getName();
         file.delete();
+        /*
         if(ProductImageService.type_single.equals(bean.getType())){
             String imageFolder_small= request.getServletContext().getRealPath("img/productSingle_small");
             String imageFolder_middle= request.getServletContext().getRealPath("img/productSingle_middle");
@@ -109,6 +102,7 @@ public class ProductImageController {
             f_small.delete();
             f_middle.delete();
         }
+         */
 
         return null;
     }

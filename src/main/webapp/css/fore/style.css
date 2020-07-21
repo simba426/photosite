@@ -980,14 +980,24 @@ div.infoInimgAndInfo span.serviceCommitmentLink a {
 }
 
 div.productDetailDiv {
-	width: 790px;
-	margin: 40px auto;
-}
+	 width: 790px;
+	 margin: 40px auto;
+ }
 
 div.productReviewDiv {
 	width: 790px;
 	margin: 40px auto;
 /* 	display:none; */
+}
+
+div.photoDiv {
+	width: 1300px;
+	margin: 40px auto;
+}
+
+div.productDiv {
+	width: 840px;
+	margin: 40px auto;
 }
 
 div.productReviewContentPart {
