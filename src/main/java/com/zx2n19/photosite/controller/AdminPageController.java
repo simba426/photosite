@@ -57,5 +57,15 @@ public class AdminPageController {
         return "admin/editPhoto";
     }
 
+    @GetMapping(value="/received_order")
+    public String receivedOrder() {
+        return "admin/listReceivedOrder";
+    }
+
+    @GetMapping(value="/created_order")
+    public String createdOrder() {
+        return "admin/listCreatedOrder";
+    }
+
 
 }

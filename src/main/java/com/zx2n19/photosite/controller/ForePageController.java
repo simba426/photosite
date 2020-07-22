@@ -45,6 +45,11 @@ public class ForePageController {
         return "fore/photo";
     }
 
+    @GetMapping("/product")
+    public String product() {
+        return "fore/product";
+    }
+
     @GetMapping("/personalpage")
     public String personal() {
         return "fore/personalpage";

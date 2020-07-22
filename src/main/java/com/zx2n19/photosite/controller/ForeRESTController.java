@@ -1,13 +1,7 @@
 package com.zx2n19.photosite.controller;
 
-import com.zx2n19.photosite.pojo.Comment;
-import com.zx2n19.photosite.pojo.Photo;
-import com.zx2n19.photosite.pojo.Product;
-import com.zx2n19.photosite.pojo.User;
-import com.zx2n19.photosite.service.CommentService;
-import com.zx2n19.photosite.service.PhotoService;
-import com.zx2n19.photosite.service.ProductService;
-import com.zx2n19.photosite.service.UserService;
+import com.zx2n19.photosite.pojo.*;
+import com.zx2n19.photosite.service.*;
 import com.zx2n19.photosite.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,10 +21,23 @@ public class ForeRESTController {
     CommentService commentService;
     @Autowired
     ProductService productService;
+    @Autowired
+    ProductImageService productImageService;
 
     @GetMapping("/forehome")
     public Object home() {
         return photoService.list();
+    }
+
+    @GetMapping("/foreproduct/{pid}")
+    public Object product(@PathVariable("pid") int pid) {
+        Product product = productService.get(pid);
+        List<ProductImage> imgs = productImageService.listDetailProductImages(product);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("product", product);
+        map.put("imgs", imgs);
+        return Result.success(map);
     }
 
     @GetMapping("/forephoto/{pid}")

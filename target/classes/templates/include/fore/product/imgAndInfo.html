@@ -1,0 +1,160 @@
+<div th:fragment="html"> 
+
+<script> 
+function imgAndInfoPageRegisterListeners(vue){
+    var stock = vue.p.stock;
+    $(".productNumberSetting").keyup(function(){
+        var num= $(".productNumberSetting").val();
+        num = parseInt(num);
+        if(isNaN(num))
+            num= 1;
+        if(num<=0)
+            num = 1;
+        if(num>stock)
+            num = stock;
+        $(".productNumberSetting").val(num);
+    });
+     
+    $(".increaseNumber").click(function(){
+        var num= $(".productNumberSetting").val();
+        num++;
+        if(num>stock)
+            num = stock;
+        $(".productNumberSetting").val(num);
+    });
+    $(".decreaseNumber").click(function(){
+        var num= $(".productNumberSetting").val();
+        --num;
+        if(num<=0)
+            num=1;
+        $(".productNumberSetting").val(num);
+    });
+
+    $(".buyLink").click(function(){
+        var url = "forecheckLogin";
+        axios.get(url).then(function(response) {
+        	if(0==response.data.code){
+                 var pid = vue.p.id;
+                 var num= $(".productNumberSetting").val();
+	             var url =  "forebuyone?pid="+pid+"&num="+num;
+	             axios.get(url).then(function(response) {
+	             	var oiid = response.data;
+	             	location.href="buy?oiid="+oiid;	
+	             });	            		
+			}
+        	else{
+                $("#loginModal").modal('show');                     
+        	}
+        });
+        return false;
+    });
+     
+    $("button.loginSubmitButton").click(function(){
+        var url =  "forelogin";
+        if(0==vue.user.username.length){
+            $("span.errorMessage").html("请输入用户名");
+            $("div.loginErrorMessageDiv").css("visibility","visible");
+            return;
+        }
+        if(0==vue.user.password.length){
+            $("span.errorMessage").html("请输入密码");
+            $("div.loginErrorMessageDiv").css("visibility","visible");
+            return;
+        }                    
+        
+        axios.post(url,vue.user).then(function(response) {
+        	var result = response.data;
+        	if(result.code==0){
+        		location.href="product?pid="+vue.p.id;
+        	}
+        	else{
+                $("span.errorMessage").html(result.message);
+                $("div.loginErrorMessageDiv").css("visibility","visible");	                    		
+        	}
+        });
+    });
+     
+    $("img.smallImage").mouseenter(function(){
+        var bigImageURL = $(this).attr("bigImageURL");
+        $("img.bigImg").attr("src",bigImageURL);
+    });
+     
+    $("img.bigImg").load(
+        function(){
+            $("img.smallImage").each(function(){
+                var bigImageURL = $(this).attr("bigImageURL");
+                img = new Image();
+                img.src = bigImageURL;
+                 
+                img.onload = function(){
+                    $("div.img4load").append($(img));
+                };
+            });     
+        }
+    );
+}
+ 
+</script>
+
+	<div class="imgAndInfo">
+
+		<div class="imgInimgAndInfo">
+			<img :src="'img/productSingle/'+p.id+'.jpg'" class="bigImg">
+			<div class="img4load hidden" ></div>
+		</div>
+
+		<div class="infoInimgAndInfo">
+
+			<div class="productTitle">
+				{{p.name}}
+			</div>
+
+			<div class="productPrice">
+
+				<div class="productPriceDiv">
+
+					<div class="promotionDiv">
+						<span class="promotionPriceDesc">价格</span>
+						<span class="promotionPriceYuan">¥</span>
+						<span class="promotionPrice">
+                            {{p.price|formatMoneyFilter}}
+                        </span>
+					</div>
+				</div>
+			</div>
+
+			<div class="productNumber">
+				<span>数量</span>
+				<span>
+                    <span class="productNumberSettingSpan">
+                    <input class="productNumberSetting" type="text" value="1">
+                    </span>
+                    <span class="arrow">
+                        <a href="#nowhere" class="increaseNumber">
+                        <span class="updown">
+                                <img src="img/site/increase.png">
+                        </span>
+                        </a>
+
+                        <span class="updownMiddle"> </span>
+                        <a href="#nowhere"  class="decreaseNumber">
+                        <span class="updown">
+                                <img src="img/site/decrease.png">
+                        </span>
+                        </a>
+
+                    </span>
+
+                件</span>
+				<span>库存{{p.stock}}件</span>
+			</div>
+
+			<div class="buyDiv">
+				<a class="buyLink" ><button class="buyButton" >立即购买</button></a>
+			</div>
+		</div>
+
+		<div style="clear:both"></div>
+
+	</div>
+</div>
