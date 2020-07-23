@@ -52,4 +52,11 @@ public class OrderService {
         orderDAO.save(bean);
     }
 
+    public void add(Order bean) {
+        orderDAO.save(bean);
+    }
+
+    public void delete(Order bean) {
+        orderDAO.delete(bean);
+    }
 }

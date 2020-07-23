@@ -3,11 +3,13 @@ package com.zx2n19.photosite.controller;
 import com.zx2n19.photosite.pojo.*;
 import com.zx2n19.photosite.service.*;
 import com.zx2n19.photosite.util.Result;
+import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
 
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -23,10 +25,41 @@ public class ForeRESTController {
     ProductService productService;
     @Autowired
     ProductImageService productImageService;
+    @Autowired
+    OrderService orderService;
 
     @GetMapping("/forehome")
     public Object home() {
         return photoService.list();
+    }
+
+    @PostMapping("/forecreateOrder/{pid}")
+    public Object createOrder(@RequestBody Order order, @PathVariable("pid") int pid, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        if(null==user)
+            return Result.fail("未登录");
+        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) + RandomUtils.nextInt(10000);
+        order.setOrderCode(orderCode);
+        order.setCreateDate(new Date());
+        order.setUser(user);
+        order.setStatus(OrderService.waitPay);
+        order.setProduct(productService.get(pid));
+        order.setNumber(1);
+        orderService.add(order);
+        Map<String,Object> map = new HashMap<>();
+        map.put("oid", order.getId());
+        map.put("total", order.getNumber() * order.getProduct().getPrice());
+
+        return Result.success(map);
+
+    }
+
+    @GetMapping("/forepayed")
+    public Object payed(int oid) {
+        Order order = orderService.get(oid);
+        order.setStatus(OrderService.waitDelivery);
+        orderService.update(order);
+        return order;
     }
 
     @GetMapping("/foreproduct/{pid}")

@@ -34,23 +34,38 @@ public class ForePageController {
         return "fore/registerSuccess";
     }
 
-    @GetMapping("/forelogout")
+    @GetMapping(value="/forelogout")
     public String logout(HttpSession session) {
         session.removeAttribute("user");
         return "redirect:home";
     }
 
-    @GetMapping("/photo")
+    @GetMapping(value="/photo")
     public String photo() {
         return "fore/photo";
     }
 
-    @GetMapping("/product")
+    @GetMapping(value="/buy")
+    public String buy() {
+        return "fore/buy";
+    }
+
+    @GetMapping(value="/pay")
+    public String pay(){
+        return "fore/pay";
+    }
+
+    @GetMapping(value="/payed")
+    public String payed(){
+        return "fore/payed";
+    }
+
+    @GetMapping(value="/product")
     public String product() {
         return "fore/product";
     }
 
-    @GetMapping("/personalpage")
+    @GetMapping(value="/personalpage")
     public String personal() {
         return "fore/personalpage";
     }

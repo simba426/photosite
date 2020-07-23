@@ -43,6 +43,7 @@
                         $(e.target).hide();
                     });
                 }
+
             }
         });
 
@@ -96,6 +97,7 @@
                         <button @click="showOrderItems(bean)" class="orderPageCheckOrderItems btn btn-primary btn-xs">查看详情</button>
 
                         <button v-if="bean.status=='waitDelivery'" @click="deliveryOrder(bean,$event)" class="btn btn-primary btn-xs">发货</button>
+
                     </td>
                 </tr>
                 <tr class="orderPageOrderItemTR"  :id="'orderItemsTR'+bean.id">
@@ -121,6 +123,25 @@
                                         <span class="text-muted">单价：￥{{bean.product.price}}</span>
                                     </td>
 
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        <span class="text-muted">订单号:{{bean.orderCode}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">收货人:{{bean.receiver}}</span>
+                                    </td>
+                                    <td align="right">
+                                        <span class="text-muted">收货人邮箱:{{bean.email}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        <span class="text-muted">收货地址:{{bean.address}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">留言信息:{{bean.userMessage}}</span>
+                                    </td>
                                 </tr>
                             </table>
                         </div>

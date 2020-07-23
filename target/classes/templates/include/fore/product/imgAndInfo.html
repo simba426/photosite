@@ -2,33 +2,6 @@
 
 <script> 
 function imgAndInfoPageRegisterListeners(vue){
-    var stock = vue.p.stock;
-    $(".productNumberSetting").keyup(function(){
-        var num= $(".productNumberSetting").val();
-        num = parseInt(num);
-        if(isNaN(num))
-            num= 1;
-        if(num<=0)
-            num = 1;
-        if(num>stock)
-            num = stock;
-        $(".productNumberSetting").val(num);
-    });
-     
-    $(".increaseNumber").click(function(){
-        var num= $(".productNumberSetting").val();
-        num++;
-        if(num>stock)
-            num = stock;
-        $(".productNumberSetting").val(num);
-    });
-    $(".decreaseNumber").click(function(){
-        var num= $(".productNumberSetting").val();
-        --num;
-        if(num<=0)
-            num=1;
-        $(".productNumberSetting").val(num);
-    });
 
     $(".buyLink").click(function(){
         var url = "forecheckLogin";
@@ -36,11 +9,8 @@ function imgAndInfoPageRegisterListeners(vue){
         	if(0==response.data.code){
                  var pid = vue.p.id;
                  var num= $(".productNumberSetting").val();
-	             var url =  "forebuyone?pid="+pid+"&num="+num;
-	             axios.get(url).then(function(response) {
-	             	var oiid = response.data;
-	             	location.href="buy?oiid="+oiid;	
-	             });	            		
+	             //var url =  "forebuyone?pid="+pid+"&num="+num;
+				 location.href= "buy?pid="+pid;
 			}
         	else{
                 $("#loginModal").modal('show');                     
@@ -128,21 +98,6 @@ function imgAndInfoPageRegisterListeners(vue){
 				<span>
                     <span class="productNumberSettingSpan">
                     <input class="productNumberSetting" type="text" value="1">
-                    </span>
-                    <span class="arrow">
-                        <a href="#nowhere" class="increaseNumber">
-                        <span class="updown">
-                                <img src="img/site/increase.png">
-                        </span>
-                        </a>
-
-                        <span class="updownMiddle"> </span>
-                        <a href="#nowhere"  class="decreaseNumber">
-                        <span class="updown">
-                                <img src="img/site/decrease.png">
-                        </span>
-                        </a>
-
                     </span>
 
                 件</span>
