@@ -45,39 +45,39 @@
 	</script>
 	<div class="buyPageDiv">
 		<div class="address">
-			<div class="addressTip">输入收货地址</div>
+			<div class="addressTip">Write Address</div>
 			<div>
 			
 				<table class="addressTable">
 					<tr>
-						<td class="firstColumn">详细地址<span class="redStar">*</span></td>
+						<td class="firstColumn">Address<span class="redStar">*</span></td>
 						
-						<td><textarea name="address" v-model="order.address" placeholder="建议您如实填写详细收货地址，例如接到名称，门牌好吗，楼层和房间号等信息"></textarea></td>
+						<td><textarea name="address" v-model="order.address" placeholder="Example: 2 Mayfield Rd, Southampton SO17 3SX"></textarea></td>
 					</tr>
 					<tr>
-						<td>收货人姓名<span class="redStar">*</span></td>
-						<td><input  name="receiver"  v-model="order.receiver" placeholder="收件人姓名" type="text"></td>
+						<td>Receiver Name<span class="redStar">*</span></td>
+						<td><input  name="receiver"  v-model="order.receiver" placeholder="Example: Ziqian" type="text"></td>
 					</tr>
 					<tr>
-						<td>邮箱号 <span class="redStar">*</span></td>
-						<td><input name="email"  v-model="order.email" placeholder="请输入邮箱号" type="text"></td>
+						<td>Email <span class="redStar">*</span></td>
+						<td><input name="email"  v-model="order.email" placeholder="Example: zx2n19@soton.ac.uk" type="text"></td>
 					</tr>
 				</table>
 			</div>
 		</div>
 		<div class="productList">
-			<div class="productListTip">确认订单信息</div>
+			<div class="productListTip">Check order info</div>
 			
 			
 			<table class="productListTable">
 				<thead>
 					<tr>
 						<th colspan="2" class="productListTableFirstColumn">
-							产品
+							Product
 						</th>
-						<th>单价</th>
-						<th>数量</th>
-						<th>小计</th>
+						<th>Price</th>
+						<th>Number</th>
+						<th>Total</th>
 					</tr>
 					<tr class="rowborder">
 						<td  colspan="2" ></td>
@@ -115,18 +115,18 @@
 			</table>
 			<div class="orderItemSumDiv">
 				<div class="pull-left">
-					<span class="leaveMessageText">给卖家留言:</span>
+					<span class="leaveMessageText">Message:</span>
 					<span>
 						<img class="leaveMessageImg" src="img/site/leaveMessage.png">
 					</span>
 					<span class="leaveMessageTextareaSpan">
 						<textarea name="userMessage" v-model="order.userMessage" class="leaveMessageTextarea"></textarea>
 						<div>
-							<span>还可以输入200个字符</span>
+							<span>Maximum 200 words</span>
 						</div>
 					</span>
 				</div>
-				<span class="pull-right">店铺合计(含运费): ￥
+				<span class="pull-right">Total: ￥
 					{{p.price|formatMoneyFilter}}
 				</span>
 			</div>
@@ -134,12 +134,12 @@
 		</div>
 		<div class="orderItemTotalSumDiv">
 			<div class="pull-right"> 
-				<span>实付款：</span>
+				<span>Money to pay：</span>
 				<span class="orderItemTotalSumSpan">{{p.price|formatMoneyFilter}}</span>
 			</div>
 		</div>
 		<div class="submitOrderDiv">
-				<button type="submit" class="submitOrderButton" @click="submitOrder">提交订单</button>
+				<button type="submit" class="submitOrderButton" @click="submitOrder">Submit Order</button>
 		</div>
 	</div>
 </div>

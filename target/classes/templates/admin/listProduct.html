@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="include/admin/adminHeader::html('产品管理')" ></head>
+<head th:include="include/admin/adminHeader::html('Manage Product')" ></head>
 <body>
 <div th:replace="include/admin/adminNavigator::html" ></div>
 <script>
@@ -30,17 +30,17 @@
                     });
                 },
                 add: function () {
-                    if(!checkEmpty(this.file, "封面"))
+                    if(!checkEmpty(this.file, "Cover"))
                         return;
-                    if(!checkEmpty(this.bean.name, "产品名称"))
+                    if(!checkEmpty(this.bean.name, "Name"))
                         return;
-                    if(!checkEmpty(this.bean.description, "产品描述"))
+                    if(!checkEmpty(this.bean.description, "Description"))
                         return;
-                    if(!checkEmpty(this.bean.category, "产品类别"))
+                    if(!checkEmpty(this.bean.category, "Category"))
                         return;
-                    if(!checkNumber(this.bean.price, "产品价格"))
+                    if(!checkNumber(this.bean.price, "Price"))
                         return;
-                    if(!checkInt(this.bean.stock, "产品库存"))
+                    if(!checkInt(this.bean.stock, "Stock"))
                         return;
                     var url = this.uri;
 
@@ -95,7 +95,7 @@
 </script>
 
 <div id="workingArea" >
-    <h1 class="label label-info" >照片管理</h1>
+    <h1 class="label label-info" >Manage product</h1>
     <br>
     <br>
     <div class="listDataTableDiv">
@@ -103,17 +103,17 @@
             <thead>
             <tr class="success">
                 <th>ID</th>
-                <th>封面</th>
-                <th>产品名称</th>
-                <th>产品描述</th>
-                <th>产品分类</th>
-                <th>产品价格</th>
-                <th>库存</th>
-                <th>卖家</th>
-                <th>上架时间</th>
-                <th>编辑</th>
-                <th>图片管理</th>
-                <th>删除</th>
+                <th>Cover</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Seller</th>
+                <th>Date issued</th>
+                <th>Edit</th>
+                <th>Manage photo</th>
+                <th>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -159,43 +159,43 @@
     <div th:replace="include/admin/adminPage::html" ></div>
 
     <div class="panel panel-warning addDiv">
-        <div class="panel-heading">新增产品</div>
+        <div class="panel-heading">Add product</div>
         <div class="panel-body">
             <table class="addTable">
                 <tr>
-                    <td>产品封面</td>
+                    <td>Cover</td>
                     <td>
                         <input id="photoPic" accept="image/*" type="file" name="image" @change="getFile($event)" />
                     </td>
                 </tr>
                 <tr>
-                    <td>产品名称</td>
+                    <td>Name</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.name" type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>产品描述</td>
+                    <td>Description</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.description" type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>产品分类</td>
+                    <td>Category</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.category" type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>产品价格</td>
+                    <td>Price</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.price"  type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>库存</td>
+                    <td>Stock</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.stock" type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr class="submitTR">
                     <td colspan="2" align="center">
-                        <a href="#nowhere"  @click="add" class="btn btn-success">提交</a>
+                        <a href="#nowhere"  @click="add" class="btn btn-success">Add</a>
                     </td>
                 </tr>
             </table>

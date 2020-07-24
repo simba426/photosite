@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="include/admin/adminHeader::html('照片编辑')" ></head>
+<head th:include="include/admin/adminHeader::html('Edit Photo')" ></head>
 <body>
 <div th:replace="include/admin/adminNavigator::html" ></div>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 <script>
     $(function(){
         var data4Vue = {
             uri:'photos',
             listURL:'photo_list',
-            bean: {id:0, name:'',description:'', category:'', shutterSpeed:'',aperture:'',iso:'', camera:'', createDate:''},
+            bean: {id:0, name:'',description:'', category:'', shutterSpeed:'',aperture:'',iso:'', camera:'', createDate:'', lens:''},
             file: null
         };
 
@@ -29,19 +30,21 @@
                     })
                 },
                 update: function () {
-                    if(!checkEmpty(this.bean.name, "照片名称"))
+                    if(!checkEmpty(this.bean.name, "Name"))
                         return;
-                    if(!checkEmpty(this.bean.description, "图片描述"))
+                    if(!checkEmpty(this.bean.description, "Description"))
                         return;
-                    if(!checkEmpty(this.bean.shutterSpeed, "快门速度"))
+                    if(!checkEmpty(this.bean.shutterSpeed, "ShutterSpeed"))
                         return;
-                    if(!checkEmpty(this.bean.aperture, "光圈"))
+                    if(!checkEmpty(this.bean.aperture, "Aperture"))
                         return;
                     if(!checkEmpty(this.bean.iso, "ISO"))
                         return;
-                    if(!checkEmpty(this.bean.camera, "相机"))
+                    if(!checkEmpty(this.bean.camera, "Camera"))
                         return;
-                    if(!checkEmpty(this.bean.category, "分类"))
+                    if(!checkEmpty(this.bean.category, "Category"))
+                        return;
+                    if(!checkEmpty(this.bean.lens, "Lens"))
                         return;
                     var url = this.uri + "/" + this.bean.id;
 
@@ -56,6 +59,7 @@
                     formData.append("camera", this.bean.camera);
                     formData.append("category", this.bean.category);
                     formData.append('createDate', this.bean.createDate);
+                    formData.append('lens', this.bean.lens);
 
                     axios.put(url, formData).then(function(response){
                         location.href=vue.listURL;
@@ -63,6 +67,14 @@
                 },
                 getFile: function (event) {
                     this.file = event.target.files[0];
+                    EXIF.getData(this.file, function () {
+                        console.log(EXIF.getAllTags(this)) // 此处打印的为选中图片的数据
+                        vue.bean.camera = EXIF.getTag(this, 'Make') + ' ' + EXIF.getTag(this, 'Model');
+                        vue.bean.iso = EXIF.getTag(this, 'ISOSpeedRatings');
+                        vue.bean.shutterSpeed = EXIF.getTag(this, 'ExposureTime').numerator + '/' + EXIF.getTag(this, 'ExposureTime').denominator;
+                        vue.bean.aperture = 'f' + EXIF.getTag(this, 'FNumber');
+                        vue.bean.lens = EXIF.getTag(this, 'undefined');
+                    })
                 }
             }
         });
@@ -78,42 +90,42 @@
 
 <div id="workingArea" >
     <ol class="breadcrumb">
-        <li><a href="photo_list">所有照片</a></li>
-        <li class="active">编辑照片</li>
+        <li><a href="photo_list">All photos</a></li>
+        <li class="active">Edit photo</li>
     </ol>
 
     <div class="panel panel-warning editDiv">
-        <div class="panel-heading">编辑照片</div>
+        <div class="panel-heading">Edit photo</div>
         <div class="panel-body">
             <table class="editTable">
                 <tr>
-                    <td>照片</td>
+                    <td>Photo</td>
                     <td>
                         <input id="photoPic" accept="image/*" type="file" name="image" @change="getFile($event)" />
                     </td>
                 </tr>
                 <tr>
-                    <td>照片名称</td>
+                    <td>Name</td>
                     <td><input  @keyup.enter="update" v-model.trim="bean.name" type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>照片分类</td>
+                    <td>Category</td>
                     <td><input  @keyup.enter="update" v-model.trim="bean.category" type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>照片描述</td>
+                    <td>Description</td>
                     <td><input  @keyup.enter="update" v-model.trim="bean.description" type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>快门</td>
+                    <td>ShutterSpeed</td>
                     <td><input  @keyup.enter="update" v-model.trim="bean.shutterSpeed"  type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>光圈</td>
+                    <td>Aperture</td>
                     <td><input  @keyup.enter="update" v-model.trim="bean.aperture" type="text"
                                 class="form-control"></td>
                 </tr>
@@ -123,15 +135,20 @@
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>相机</td>
+                    <td>Camera</td>
                     <td><input  @keyup.enter="update" v-model.trim="bean.camera"  type="text"
+                                class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Lens</td>
+                    <td><input  @keyup.enter="update" v-model.trim="bean.lens"  type="text"
                                 class="form-control"></td>
                 </tr>
 
                 <tr class="submitTR">
                     <td colspan="2" align="center">
                         <input type="hidden" name="id" v-model.trim="bean.id">
-                        <a href="#nowhere"  @click="update" class="btn btn-success">提交</a>
+                        <a href="#nowhere"  @click="update" class="btn btn-success">Upload</a>
                     </td>
                 </tr>
             </table>

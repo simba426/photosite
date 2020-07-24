@@ -83,6 +83,7 @@ public class PhotoController {
         bean.setAperture(request.getParameter("aperture"));
         bean.setShutterSpeed(request.getParameter("shutterSpeed"));
         bean.setIso(request.getParameter("iso"));
+        bean.setLens(request.getParameter("lens"));
         bean.setCamera(request.getParameter("camera"));
         bean.setCreateDate(new Date());
         bean.setUser((User)session.getAttribute("user"));

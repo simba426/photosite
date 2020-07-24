@@ -1,8 +1,8 @@
 <div th:fragment="html"> 
 	<div class="productDiv" v-show="showProduct" >
 		<div class="productReviewTopPart">
-			<a  href="#nowhere" class="productReviewTopPartSelectedLink" @click="toggle2Photo">照片</a>
-			<a  href="#nowhere" class="selected">商品<span class="productReviewTopReviewLinkNumber"></span> </a>
+			<a  href="#nowhere" class="productReviewTopPartSelectedLink" @click="toggle2Photo">Photo</a>
+			<a  href="#nowhere" class="selected">Product<span class="productReviewTopReviewLinkNumber"></span> </a>
 		</div>
 
 		<div class="productItem"  v-for="p in products">

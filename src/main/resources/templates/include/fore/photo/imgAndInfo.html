@@ -10,7 +10,7 @@
 						var url = 'likeds';
 						vue.like.photo.id = pid;
 						axios.post(url, vue.like).then(function(response) {
-							$(".likedLink").html("已添加到收藏");
+							$(".likedLink").html("Added to Favourite");
 							$(".likedLink").attr("disabled","disabled");
 							$(".likedLink").css("background-color","lightgray")
 							$(".likedLink").css("border-color","lightgray")
@@ -43,15 +43,19 @@
 				});
 			});
 
+			$(".loginLink").click(function(){
+				$("#loginModal").modal('show');
+			});
+
 			$("button.loginSubmitButton").click(function(){
 				var url =  "forelogin";
 				if(0==vue.user.username.length){
-					$("span.errorMessage").html("请输入用户名");
+					$("span.errorMessage").html("Input Username");
 					$("div.loginErrorMessageDiv").css("visibility","visible");
 					return;
 				}
 				if(0==vue.user.password.length){
-					$("span.errorMessage").html("请输入密码");
+					$("span.errorMessage").html("Input Password");
 					$("div.loginErrorMessageDiv").css("visibility","visible");
 					return;
 				}
@@ -72,15 +76,15 @@
 	</script>
 
 	<div class="imgAndInfo2">
-		<h2>{{p.name}}</h2>
-		<a href="#nowhere">{{p.user.username}}</a>
+		<h2>Title: {{p.name}}</h2>
+		Photographer:<a :href="'personalpage?uid=' + p.user.id">{{p.user.username}}</a>
 
 		<div class="productDetailImagesPart2">
 			<img :src="'img/photo/'+p.id+'.jpg'">
 		</div>
 
 		<div class="makeLikedButtonDiv">
-			<a href="#nowhere" class="likedLink"><button type="submit" class="likedButton">加入收藏</button></a>
+			<a href="#nowhere" class="likedLink"><button type="submit" class="likedButton">Favourite</button></a>
 		</div>
 	     
 	    <div style="clear:both"></div>

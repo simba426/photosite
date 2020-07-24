@@ -22,12 +22,12 @@ function imgAndInfoPageRegisterListeners(vue){
     $("button.loginSubmitButton").click(function(){
         var url =  "forelogin";
         if(0==vue.user.username.length){
-            $("span.errorMessage").html("请输入用户名");
+            $("span.errorMessage").html("Input Username");
             $("div.loginErrorMessageDiv").css("visibility","visible");
             return;
         }
         if(0==vue.user.password.length){
-            $("span.errorMessage").html("请输入密码");
+            $("span.errorMessage").html("Input Password");
             $("div.loginErrorMessageDiv").css("visibility","visible");
             return;
         }                    
@@ -84,7 +84,7 @@ function imgAndInfoPageRegisterListeners(vue){
 				<div class="productPriceDiv">
 
 					<div class="promotionDiv">
-						<span class="promotionPriceDesc">价格</span>
+						<span class="promotionPriceDesc">Price</span>
 						<span class="promotionPriceYuan">¥</span>
 						<span class="promotionPrice">
                             {{p.price|formatMoneyFilter}}
@@ -94,18 +94,18 @@ function imgAndInfoPageRegisterListeners(vue){
 			</div>
 
 			<div class="productNumber">
-				<span>数量</span>
+				<span>Number</span>
 				<span>
                     <span class="productNumberSettingSpan">
                     <input class="productNumberSetting" type="text" value="1">
                     </span>
 
-                件</span>
-				<span>库存{{p.stock}}件</span>
+                </span>
+				<!-- <span>Stock:{{p.stock}}</span> -->
 			</div>
 
 			<div class="buyDiv">
-				<a class="buyLink" ><button class="buyButton" >立即购买</button></a>
+				<a class="buyLink" ><button class="buyButton" >Buy</button></a>
 			</div>
 		</div>
 

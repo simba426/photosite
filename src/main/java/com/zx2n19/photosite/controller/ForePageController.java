@@ -1,6 +1,8 @@
 package com.zx2n19.photosite.controller;
 
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -36,7 +38,9 @@ public class ForePageController {
 
     @GetMapping(value="/forelogout")
     public String logout(HttpSession session) {
-        session.removeAttribute("user");
+        Subject subject = SecurityUtils.getSubject();
+        if(subject.isAuthenticated())
+            subject.logout();
         return "redirect:home";
     }
 

@@ -3,11 +3,11 @@
         <div class="headbar show1">
             <div class="head">
                 <span style="margin-left:10px" class="glyphicon glyphicon-th-list"></span>
-                <span style="margin-left:10px" >热门照片</span>
+                <span style="margin-left:10px" >Popular Photo</span>
             </div>
             <div class="rightMenu">
-                <span><a href="">商品列表</a></span>
-                <span><a href="">用户列表</a></span>
+                <span><a href="">Product List</a></span>
+                <span><a href="">User List</a></span>
             </div>
 
         </div>
@@ -18,7 +18,7 @@
     <div class="homepageCategoryProducts">
         <div class="eachHomepageCategoryProducts">
             <div class="left-mark"></div>
-            <span class="categoryTitle">热门照片</span>
+            <span class="categoryTitle">Popular Photo</span>
             <br>
             <div class="photoItem"  v-for="p in photos">
                 <a :href="'photo?pid='+p.id">

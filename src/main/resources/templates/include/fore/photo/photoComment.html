@@ -1,7 +1,7 @@
 <div th:fragment="html">
 	<div class="productReviewDiv">
 		<div class="productReviewTopPart">
-			<a  href="#nowhere" class="selected">评论 <span class="productReviewTopReviewLinkNumber">{{p.commentCount}}</span> </a>
+			<a  href="#nowhere" class="selected">Comment <span class="productReviewTopReviewLinkNumber">{{p.commentCount}}</span> </a>
 		</div>
 		
 		<div class="productReviewContentPart">
@@ -22,15 +22,15 @@
 			</div>
 
 			<div class="makeReviewDiv">
-				<div class="makeReviewText">喜欢就评论一下吧</div>
+				<div class="makeReviewText">Leave a comment!</div>
 				<table class="makeReviewTable">
 					<tr>
-						<td class="makeReviewTableFirstTD">撰写评论</td>
+						<td class="makeReviewTableFirstTD">Write comment</td>
 						<td><textarea v-model="newcomment.content"></textarea></td>
 					</tr>
 				</table>
 				<div class="makeReviewButtonDiv">
-					<a href="#nowhere" class="commentLink"><button class="commentButton" type="submit">提交评价</button></a>
+					<a href="#nowhere" class="commentLink"><button class="commentButton" type="submit">Submit</button></a>
 				</div>
 			</div>
 		</div>

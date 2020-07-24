@@ -51,11 +51,11 @@
 	function checkNumber(value, text){
 		
 		if(value.length==0){
-			alert(text+ "不能为空");
+			alert(text+ "can not be Empty");
 			return false;
 		}
 		if(isNaN(value)){
-			alert(text+ "必须是数字");
+			alert(text+ "must be Integer");
 			return false;
 		}
 		return true;
@@ -64,11 +64,11 @@
 	function checkInt(value, text){
 		
 		if(value.length==0){
-			alert(text+ "不能为空");
+			alert(text+ "can not be Empty");
 			return false;
 		}
 		if(parseInt(value)!=value){
-			alert(text+ "必须是整数");
+			alert(text+ "must be Integer");
 			return false;
 		}
 		return true;
@@ -76,7 +76,7 @@
 	
     //确实是否要删除
 	function checkDeleteLink(){
-		var confirmDelete = confirm("确认要删除");
+		var confirmDelete = confirm("Want to delete?");
 		if(confirmDelete)
 			return true;
 		return false;		

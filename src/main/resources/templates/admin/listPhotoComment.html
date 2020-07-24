@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="include/admin/adminHeader::html('照片评论管理')" ></head>
+<head th:include="include/admin/adminHeader::html('Manage Comment')" ></head>
 <body>
 <div th:replace="include/admin/adminNavigator::html" ></div>
 <script>
@@ -38,7 +38,7 @@
                     });
                 },
                 add: function () {
-                    if(!checkEmpty(this.bean.content, "评论内容"))
+                    if(!checkEmpty(this.bean.content, "Content"))
                         return;
                     var url = this.uri;
                     this.bean.photo.id = pid;
@@ -80,19 +80,19 @@
 
 <div id="workingArea" >
     <ol class="breadcrumb">
-        <li><a href="photo_list">所有照片</a></li>
-        <li class="active">照片评论管理</li>
+        <li><a href="photo_list">All photos</a></li>
+        <li class="active">Comment</li>
     </ol>
-    <h1 class="label label-info" >照片评论管理</h1>
+    <h1 class="label label-info" >Comment</h1>
     <div class="listDataTableDiv">
         <table class="table table-striped table-bordered table-hover  table-condensed">
             <thead>
             <tr class="success">
                 <th>ID</th>
-                <th>评论内容</th>
-                <th>评论用户</th>
-                <th>评论时间</th>
-                <th>删除</th>
+                <th>Content</th>
+                <th>User</th>
+                <th>Date</th>
+                <th>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -117,18 +117,18 @@
     <div th:replace="include/admin/adminPage::html" ></div>
 
     <div class="panel panel-warning addDiv">
-        <div class="panel-heading">新增评论</div>
+        <div class="panel-heading">Add comment</div>
         <div class="panel-body">
             <table class="addTable">
                 <tr>
-                    <td>评论内容</td>
+                    <td>Content</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.content" type="text"
                                 class="form-control"></td>
                 </tr>
 
                 <tr class="submitTR">
                     <td colspan="2" align="center">
-                        <a href="#nowhere"  @click="add" class="btn btn-success">提交</a>
+                        <a href="#nowhere"  @click="add" class="btn btn-success">Submit</a>
                     </td>
                 </tr>
             </table>

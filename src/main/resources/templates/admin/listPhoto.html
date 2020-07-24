@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="include/admin/adminHeader::html('照片管理')" ></head>
+<head th:include="include/admin/adminHeader::html('Manage Photo')" ></head>
 <body>
 <div th:replace="include/admin/adminNavigator::html" ></div>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 <script>
     $(function(){
         var data4Vue = {
             uri:'photos',
             pagination:{},
             beans: [],
-            bean: {id:0, name:'',description:'', category:'', shutterSpeed:'',aperture:'',iso:'', camera:''},
+            bean: {id:0, name:'',description:'', category:'', shutterSpeed:'',aperture:'',iso:'', camera:'', lens:''},
             like: {id:0, photo:{id:0}},
             file: null
         };
@@ -31,21 +32,23 @@
                     });
                 },
                 add: function () {
-                    if(!checkEmpty(this.file, "照片"))
+                    if(!checkEmpty(this.file, "Photo"))
                         return;
-                    if(!checkEmpty(this.bean.name, "照片名称"))
+                    if(!checkEmpty(this.bean.name, "Name"))
                         return;
-                    if(!checkEmpty(this.bean.description, "图片描述"))
+                    if(!checkEmpty(this.bean.description, "Description"))
                         return;
-                    if(!checkEmpty(this.bean.shutterSpeed, "快门速度"))
+                    if(!checkEmpty(this.bean.shutterSpeed, "ShutterSpeed"))
                         return;
-                    if(!checkEmpty(this.bean.aperture, "光圈"))
+                    if(!checkEmpty(this.bean.aperture, "Aperture"))
                         return;
                     if(!checkEmpty(this.bean.iso, "ISO"))
                         return;
-                    if(!checkEmpty(this.bean.camera, "相机"))
+                    if(!checkEmpty(this.bean.camera, "Camera"))
                         return;
-                    if(!checkEmpty(this.bean.category, "分类"))
+                    if(!checkEmpty(this.bean.category, "Category"))
+                        return;
+                    if(!checkEmpty(this.bean.lens, "Lens"))
                         return;
                     var url = this.uri;
 
@@ -59,10 +62,11 @@
                     formData.append("iso", this.bean.iso);
                     formData.append("camera", this.bean.camera);
                     formData.append("category", this.bean.category);
+                    formData.append("lens", this.bean.lens);
 
                     axios.post(url, formData).then(function(response){
                         vue.list(0);
-                        vue.bean = {id:0,name:'',description:'', category:'', shutterSpeed:'',aperture:'',iso:'', camera:''};
+                        vue.bean = {id:0,name:'',description:'', category:'', shutterSpeed:'',aperture:'',iso:'', camera:'', lens:''};
                         $("#photoPic").val('');
                         vue.file = null;
                     });
@@ -89,6 +93,14 @@
                 },
                 getFile: function (event) {
                     this.file = event.target.files[0];
+                    EXIF.getData(this.file, function () {
+                        console.log(EXIF.getAllTags(this)) // 此处打印的为选中图片的数据
+                        vue.bean.camera = EXIF.getTag(this, 'Make') + ' ' + EXIF.getTag(this, 'Model');
+                        vue.bean.iso = EXIF.getTag(this, 'ISOSpeedRatings');
+                        vue.bean.shutterSpeed = EXIF.getTag(this, 'ExposureTime').numerator + '/' + EXIF.getTag(this, 'ExposureTime').denominator;
+                        vue.bean.aperture = 'f' + EXIF.getTag(this, 'FNumber');
+                        vue.bean.lens = EXIF.getTag(this, 'undefined');
+                    })
                 },
                 jump: function(page){
                     jump(page,vue); //定义在adminHeader.html 中
@@ -109,7 +121,7 @@
 </script>
 
 <div id="workingArea" >
-    <h1 class="label label-info" >照片管理</h1>
+    <h1 class="label label-info" >Manage photo</h1>
     <br>
     <br>
     <div class="listDataTableDiv">
@@ -117,20 +129,21 @@
             <thead>
             <tr class="success">
                 <th>ID</th>
-                <th>照片</th>
-                <th>照片名称</th>
-                <th>照片分类</th>
-                <th>照片描述</th>
-                <th>光圈大小</th>
-                <th>快门速度</th>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Aperture</th>
+                <th>ShutterSpeed</th>
                 <th>ISO</th>
-                <th>相机型号</th>
-                <th>创建日期</th>
-                <th>所属用户</th>
-                <th>编辑</th>
-                <th>查看评论</th>
-                <th>喜欢</th>
-                <th>删除</th>
+                <th>Camera</th>
+                <th>Lens</th>
+                <th>Created Date</th>
+                <th>Photographer</th>
+                <th>Edit</th>
+                <th>Comment</th>
+                <th>Favourite</th>
+                <th>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -161,6 +174,9 @@
                     {{bean.camera}}
                 </td>
                 <td>
+                    {{bean.lens}}
+                </td>
+                <td>
                     {{bean.createDate | formatDateFilter}}
                 </td>
                 <td>
@@ -173,7 +189,7 @@
                     <a :href="'photo_comment_list?pid=' + bean.id "><span class="glyphicon glyphicon-th-list"></span></a>
                 </td>
                 <td>
-                    <a href="#nowhere"  @click="liked(bean.id)">喜欢</a>
+                    <a href="#nowhere"  @click="liked(bean.id)">Favourite</a>
                 </td>
                 <td>
                     <a href="#nowhere"  @click="deleteBean(bean.id)"><span class="glyphicon glyphicon-trash"></span></a>
@@ -185,37 +201,37 @@
     <div th:replace="include/admin/adminPage::html" ></div>
 
     <div class="panel panel-warning addDiv">
-        <div class="panel-heading">新增照片</div>
+        <div class="panel-heading">Upload photo</div>
         <div class="panel-body">
             <table class="addTable">
                 <tr>
-                    <td>照片</td>
+                    <td>Photo</td>
                     <td>
                         <input id="photoPic" accept="image/*" type="file" name="image" @change="getFile($event)" />
                     </td>
                 </tr>
                 <tr>
-                    <td>照片名称</td>
+                    <td>Name</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.name" type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>照片分类</td>
+                    <td>Category</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.category" type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>照片描述</td>
+                    <td>Description</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.description" type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>快门</td>
+                    <td>ShutterSpeed</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.shutterSpeed"  type="text"
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>光圈</td>
+                    <td>Aperture</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.aperture" type="text"
                                 class="form-control"></td>
                 </tr>
@@ -225,14 +241,19 @@
                                 class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>相机</td>
+                    <td>Camera</td>
                     <td><input  @keyup.enter="add" v-model.trim="bean.camera"  type="text"
+                                class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Lens</td>
+                    <td><input  @keyup.enter="add" v-model.trim="bean.lens"  type="text"
                                 class="form-control"></td>
                 </tr>
 
                 <tr class="submitTR">
                     <td colspan="2" align="center">
-                        <a href="#nowhere"  @click="add" class="btn btn-success">提交</a>
+                        <a href="#nowhere"  @click="add" class="btn btn-success">Upload</a>
                     </td>
                 </tr>
             </table>

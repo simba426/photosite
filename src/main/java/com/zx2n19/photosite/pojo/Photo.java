@@ -36,6 +36,7 @@ public class Photo {
     private String aperture;
     private String iso;
     private String camera;
+    private String lens;
     private Date createDate;
 
     @Transient

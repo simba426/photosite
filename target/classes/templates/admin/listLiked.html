@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="include/admin/adminHeader::html('喜爱的照片管理')" ></head>
+<head th:include="include/admin/adminHeader::html('Manage Favourite')" ></head>
 <body>
 <div th:replace="include/admin/adminNavigator::html" ></div>
 <script>
@@ -59,16 +59,16 @@
 </script>
 
 <div id="workingArea" >
-    <h1 class="label label-info" >收藏管理</h1>
+    <h1 class="label label-info" >Favourite</h1>
     <div class="listDataTableDiv">
         <table class="table table-striped table-bordered table-hover  table-condensed">
             <thead>
             <tr class="success">
                 <th>ID</th>
-                <th>照片</th>
-                <th>照片名称</th>
-                <th>摄影师</th>
-                <th>删除</th>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Photographer</th>
+                <th>Delete</th>
             </tr>
             </thead>
             <tbody>

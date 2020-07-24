@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="include/admin/adminHeader::html('照片评论管理')" ></head>
+<head th:include="include/admin/adminHeader::html('Manage Comment')" ></head>
 <body>
 <div th:replace="include/admin/adminNavigator::html" ></div>
 <script>
@@ -62,16 +62,18 @@
 </script>
 
 <div id="workingArea" >
-    <h1 class="label label-info" >评论管理</h1>
+    <h1 class="label label-info" >Manage comment</h1>
+    <br>
+    <br>
     <div class="listDataTableDiv">
         <table class="table table-striped table-bordered table-hover  table-condensed">
             <thead>
             <tr class="success">
                 <th>ID</th>
-                <th>评论内容</th>
-                <th>评论照片</th>
-                <th>评论时间</th>
-                <th>删除</th>
+                <th>Content</th>
+                <th>Photo</th>
+                <th>Comment date</th>
+                <th>Delete</th>
             </tr>
             </thead>
             <tbody>
